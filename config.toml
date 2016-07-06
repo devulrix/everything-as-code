@@ -1,4 +1,4 @@
-baseurl = "http://everything-as-code.de/"
+baseurl = "http://eas-web.cfapps.io/"
 languageCode = "de-de"
 title = "Everything as Code"
 
@@ -11,7 +11,7 @@ copyright = "Code released under the Apache 2.0 license."
 [params]
   DateForm = "Mon, Jan 2, 2006"
   Description = "Your site description"
-  Author = "Benoît Benedetti"
+  Author = "Everything-as-code"
   email = "everything.as.code@gmail.com"
 
 
@@ -21,6 +21,9 @@ copyright = "Code released under the Apache 2.0 license."
 [[params.social]]
   title = "github"
   url = "https://github.com/devulrix"
+[[params.social]]
+    title = "youtube"
+    url = "https://www.youtube.com/channel/UC4d2lgIJa9FhQeVqUaFx1BQ/featured"
 
 [[menu.main]]
   name = "home"
@@ -31,6 +34,10 @@ copyright = "Code released under the Apache 2.0 license."
   url = "/slack.html"
   weight = -180
 [[menu.main]]
+    name = "Twitter"
+    url = "https://twitter.com/E_as_C"
+    weight = -160
+[[menu.main]]
   name = "Archives"
   url = "/post/"
-  weight = -160
+  weight = -140
