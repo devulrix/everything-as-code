@@ -3,7 +3,7 @@ categories = ["Blog"]
 date = "2016-07-11T14:44:14+02:00"
 description = ""
 draft = false
-image = "/img/post-bg.jpg"
+image = "/images/sf.jpg"
 tags = ["@mydigamma", "Blog"]
 title = "Willkommen auf unserer neuen Webseite"
 
