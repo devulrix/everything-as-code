@@ -1,6 +1,6 @@
 ---
 applications:
-- name: eac-web
+- name: eas_web
   memory: 64M
   disk_quota: 128M
   instances: 1
