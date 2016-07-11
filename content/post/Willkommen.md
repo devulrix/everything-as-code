@@ -16,7 +16,7 @@ Nachdem Ulrich Hölscher [@DevUlrix](https://twitter.com/DevUlrix) und ich
 
 Wir hatten von Anfang auch an einen Slack-Kanal etabliert, um dort ein Medium für die Diskussion zu bieten.
 
-Inzwischen sind wir auch auf Twitter unter [@E`_as`_C](https://twitter.com/e_as_c) vertreten und diese Webseite ist ein weiterer Schritt in unserer Entwicklung.
+Inzwischen sind wir auch auf Twitter unter [@E_as_C](https://twitter.com/e_as_c) vertreten und diese Webseite ist ein weiterer Schritt in unserer Entwicklung.
 
 Alle Links zu den genannten Medien findet ihr oben rechts auf der Webseite.
 
