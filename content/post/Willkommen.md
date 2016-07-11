@@ -1,12 +1,13 @@
 +++
-categories = ["Blog"]
+categories = ["Allgemein"]
 date = "2016-07-11T14:44:14+02:00"
 description = ""
 draft = false
-image = "/images/duesseldorf_CC_flickr.jpeg"
-tags = ["@mydigamma", "Blog"]
+image = "/images/post_bg.jpg"
+tags = ["Ankündigung", "Blog"]
 title = "Willkommen auf unserer neuen Webseite"
 author = "@mydigamma"
+author_twitter = "https://twitter.com/MyDigamma"
 +++
 
 # Willkommen auf unserer neuen Webseite
