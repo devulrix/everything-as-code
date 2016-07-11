@@ -11,6 +11,11 @@
                     <div>
                         {{ .Summary }}
                     </div>
+                    {{ if .Truncated }}
+                    <div class="read-more-link">
+                      <a href="{{ .RelPermalink }}">Weiter lesen…</a>
+                    </div>
+                    {{ end }}
                     <br />
                     {{ partial "categories.html" .}}
                     <br />
