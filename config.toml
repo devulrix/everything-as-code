@@ -13,6 +13,7 @@ copyright = "Code released under the Apache 2.0 license."
   Description = "A blog for livelong learners"
   Author = "Everything-as-code"
   email = "everything.as.code@gmail.com"
+  MainBGImage = "/images/main_bg.jpg"
 
 
 [[params.social]]
