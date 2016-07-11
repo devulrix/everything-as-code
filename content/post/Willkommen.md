@@ -11,7 +11,7 @@ author_twitter = "https://twitter.com/MyDigamma"
 +++
 
 Nachdem Ulrich Hölscher [@DevUlrix](https://twitter.com/DevUlrix) und ich
-[@mydigamma](https://twitter.com/MyDigamma) im März 2016 mit einer virtuellen Meetup-Gruppe und einem Youtube-Kanal angefangen haben über die Container Technologie [Docker](docker.com) auszubilden, entwickelt sich alles sehr schnell weiter.
+[@mydigamma](https://twitter.com/MyDigamma) im März 2016 mit einer virtuellen Meetup-Gruppe und einem Youtube-Kanal angefangen haben über die Container Technologie [Docker](https://docker.com) auszubilden, entwickelt sich alles sehr schnell weiter.
 <!--more-->
 Wir hatten von Anfang an auch einen Slack-Kanal etabliert, um dort ein Medium zur Diskussion zu bieten.
 
