@@ -1,17 +1,18 @@
 +++
 tags = [
-    "go",
-    "golang",
-    "templates",
+    "blog",
+    "docker",
+    "Infrastruktur",
     "themes",
     "development",
 ]
 categories = [
     "Development",
-    "golang",
+    "blog",
 ]
-image = "/img/about-bg.jpg" #optional image - "/img/about-bg.jpg" is the default
+image = "/images/main_bg.jpg" #optional image - "/images/main_bg.jpg" is the default
 description = ""
 draft = true
+author = "Everything-as-code"
+author_twitter = "https://twitter.com/E_as_C"
 +++
-

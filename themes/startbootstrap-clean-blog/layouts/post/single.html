@@ -3,7 +3,7 @@
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
     {{ if isset .Params "image" }}<header class="intro-header" style="background-image: url('{{ .Site.BaseURL }}/{{ .Params.image }}')">
-      {{ else }}<header class="intro-header" style="background-image: url('{{ .Site.BaseURL }}/img/post-bg.jpg')">
+      {{ else }}<header class="intro-header" style="background-image: url('{{ .Site.BaseURL }}{{ .Site.Params.MainBGImage }}')">
     {{ end }}
       <div class="container">
         <div class="row">
@@ -11,7 +11,9 @@
              <div class="post-heading">
                <h1>{{ .Title }}</h1>
                <h2 class="subheading">{{ .Description }}</h2>
-               <span class="meta">Posted by <a href="#">{{ .Site.Params.Author }}</a> on {{ dateFormat .Site.Params.DateForm .Date }}
+               {{ if isset .Params "author"}} <span class="meta">Posted by <a href="{{ .Params.author_twitter }}">{{ .Params.author }}</a> on {{ dateFormat .Site.Params.DateForm .Date }}
+                 {{ else }} <span class="meta">Posted by <a href="#">{{ .Site.Params.Author }}</a> on {{ dateFormat .Site.Params.DateForm .Date }}
+               {{ end }}
                  <br />
                  {{ partial "categories.html" . }}
                  <br />
