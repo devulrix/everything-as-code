@@ -35,10 +35,6 @@ copyright = "Code released under the Apache 2.0 license."
   url = "https://www.youtube.com/channel/UC4d2lgIJa9FhQeVqUaFx1BQ/featured"
   weight = -180
 [[menu.main]]
-  name = "slack"
-  url = "/slack.html"
-  weight = -160
-[[menu.main]]
   name = "Twitter"
   url = "https://twitter.com/E_as_C"
   weight = -140
