@@ -3,23 +3,8 @@
                       <h2 class="post-title">{{ .Title }}</h2>
                       <h3 class="post-subtitle">{{ .Description }}</h3>
                     </a>
-                    {{ if isset .Params "author"}} <p class="post-meta">Posted by <a href="{{ .Params.author_twitter }}">{{ .Params.author }}</a> on {{ dateFormat .Site.Params.DateForm .Date }}
-                      {{ else }} <p class="post-meta">Posted by <a href="#">{{ .Site.Params.Author }}</a> on {{ dateFormat .Site.Params.DateForm .Date }}
-                    {{ end }}
-                    <br />
-                    <!-- Snippet of post -->
-                    <div>
-                        {{ .Summary }}
-                    </div>
-                    {{ if .Truncated }}
-                    <div class="read-more-link">
-                      <a href="{{ .RelPermalink }}">Weiter lesen…</a>
-                    </div>
-                    {{ end }}
-                    <br />
-                    {{ partial "categories.html" .}}
-                    <br />
-                    {{ partial "tags.html" .}}
+                    <p class="post-meta">
+                      {{ partial "meta.html" .}}
                   </p>
                 </div>
                 <hr>

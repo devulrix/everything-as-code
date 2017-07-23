@@ -1,16 +1,14 @@
 {{ partial "header.html" .}}
 
     <!-- Page Header -->
-    {{ if isset .Params "image" }}<header class="intro-header" style="background-image: url('{{ .Site.BaseURL }}/{{ .Params.image }}')">
-      {{ else }}<header class="intro-header" style="background-image: url('{{ .Site.BaseURL }}{{ .Site.Params.MainBGImage }}')">
-    {{ end }}
+    <header class="intro-header" style="background-image: url('{{ .Site.BaseURL }}/img/home-bg.jpg')">
      <div class="container">
        <div class="row">
          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
            <div class="site-heading">
              <h1>{{ .Site.Title }}</h1>
              <hr class="small">
-             {{ if isset .Site.Params "Description" }}<span class="subheading">{{ .Site.Params.Description }}</span>{{ end }}
+             {{ with .Site.Params.Description }}<span class="subheading">{{ . }}</span>{{ end }}
            </div>
          </div>
        </div>
@@ -21,7 +19,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          {{ range first 4 (where .Data.Pages "Type" "post") }}
+          {{ $posts := or .Site.Params.PostSummariesFrontPage 4 }}
+          {{ range first $posts (where .Data.Pages "Type" "post") }}
               {{ .Render "summary"}}
           {{ end }}
           <!-- Pager -->

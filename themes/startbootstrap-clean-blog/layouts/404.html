@@ -1,14 +1,14 @@
 {{ partial "header.html" .}}
 
     <!-- Page Header -->
-    <header class="intro-header" style="background-image: url('{{ .Site.BaseURL }}{{ .Site.Params.MainBGImage }}')">
+    <header class="intro-header" style="background-image: url('{{ .Site.BaseURL }}/img/home-bg.jpg')">
      <div class="container">
        <div class="row">
          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
            <div class="site-heading">
-             <h1>404</h1>
+             <h1>{{ .Site.Title }}</h1>
              <hr class="small">
-             <span class="subheading">Da ist was schief gelaufen</span>
+             <span class="subheading">{{ .Site.Title }}</span>
            </div>
          </div>
        </div>
@@ -17,14 +17,16 @@
 
     <!-- Main Content -->
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          Wir konnten deine Seite nicht finden, vielleicht hilft dir das Archive:
-          <p/>
-          {{ range .Paginator.Pages }}
-              {{ .Render "archive" }}
-          {{ end }}
-          {{ template "_internal/pagination.html" . }}
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-preview">
+          <p class="post-meta"><a href="{{ .Site.BaseURL }}">Index</a>
+            <br />
+          </p>
+        </div>
+        <div class="post-preview">
+          <p class="post-meta"><a href="{{ .Site.BaseURL }}/post/">Archives</a>
+            <br />
+          </p>
         </div>
       </div>
     </div>
