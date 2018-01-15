@@ -5,7 +5,7 @@ description = ""
 draft = false
 image = "/images/post_bg.jpg"
 tags = ["ARM", "Raspberry PI", "YouTube"]
-title = "5. DoDo: Introduction to Docker for Raspberry PI Hallo Soptim"
+title = "5. DoDo: Introduction to Docker for Raspberry PI"
 author = "@devulrix"
 author_twitter = "https://twitter.com/DevUlrix"
 +++
