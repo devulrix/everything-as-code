@@ -1,5 +1,5 @@
-baseurl = "https://www.everything-as-code.de"
-languageCode = "de-de"
+baseurl = "https://blog.everything-as-code.com"
+languageCode = "en"
 title = "Everything as Code"
 
 theme = "startbootstrap-clean-blog"
