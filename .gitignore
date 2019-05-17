@@ -1,2 +1,3 @@
 # ignore the hugo output folder
 public/
+.vscode 
