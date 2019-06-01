@@ -18,7 +18,7 @@ copyright = "Code released under the Apache 2.0 license."
 
 [[params.social]]
   title = "twitter"
-  url = "https://twitter.com/E_as_C"
+  url = "https://twitter.com/DevUlrix"
 [[params.social]]
   title = "github"
   url = "https://github.com/devulrix"
@@ -36,7 +36,7 @@ copyright = "Code released under the Apache 2.0 license."
   weight = -180
 [[menu.main]]
   name = "Twitter"
-  url = "https://twitter.com/E_as_C"
+  url = "https://twitter.com/DevUlrix"
   weight = -140
 [[menu.main]]
   name = "Archives"
