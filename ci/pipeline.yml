@@ -1,0 +1,17 @@
+---
+resources:
+- name: eac-hugo
+  type: git
+  source: 
+    uri: https://github.com/devulrix/everything-as-code.git
+    branch: hugo-0.55
+
+
+jobs:
+- name: dev-site
+  serial: true
+  plan:
+  - get: eac-hugo
+    trigger: true
+  - task: hugo-build
+    file: eac-hugo/ci/tasks/hugo-build.yml
