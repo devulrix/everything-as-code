@@ -1,44 +1,66 @@
-baseurl = "https://blog.everything-as-code.com"
-languageCode = "en"
+baseURL = "https://everything-as-code.com"
 title = "Everything as Code"
+copyright = "Copyright © 2008–2020, Steve Francia and the Hugo Authors; all rights reserved."
+paginate = 2
+languageCode = "en"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+#googleAnalytics = "UA-XXXX"
+#DisqusShortname = ""
+theme = "hugo-theme-chunky-poster"
 
-theme = "startbootstrap-clean-blog"
-copyright = "Code released under the Apache 2.0 license."
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 0
 
-[author]
-  name = "Everything-as-code"
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+author = "authors"
 
 [params]
-  DateForm = "Mon, Jan 2, 2006"
-  Description = "A blog for livelong learners"
-  Author = "Everything-as-code"
-  email = "everything.as.code@gmail.com"
-  MainBGImage = "/images/main_bg.jpg"
+  author = "Ulrich Hoelscher"
+  description = "A blog for livelong learners."
+  homepageImage = "/images/homepage-image.jpg"
+  share = true
+  showLanguageSwitcher = false
+
+  # Custom CSS and JS. Relative to /static/css and /static/js respectively.
+  customCSS = []
+  customJS = []
+
+  [params.social]
+    rss = true
+    twitter = "https://twitter.com/DevUlrix"
+    github = "https://github.com/devulrix"
+    youtube = "https://youtube.com"
 
 
-[[params.social]]
-  title = "twitter"
-  url = "https://twitter.com/E_as_C"
-[[params.social]]
-  title = "github"
-  url = "https://github.com/devulrix"
-[[params.social]]
-    title = "youtube"
-    url = "https://www.youtube.com/channel/UC4d2lgIJa9FhQeVqUaFx1BQ/featured"
+  [params.prismJS]
+    enable = true
+    theme = ""
 
-[[menu.main]]
-  name = "home"
-  url = "/"
-  weight = -200
-[[menu.main]]
-  name = "YouTube"
-  url = "https://www.youtube.com/channel/UC4d2lgIJa9FhQeVqUaFx1BQ/featured"
-  weight = -180
-[[menu.main]]
-  name = "Twitter"
-  url = "https://twitter.com/E_as_C"
-  weight = -140
-[[menu.main]]
-  name = "Archives"
-  url = "/post/"
-  weight = -120
+  [params.commento]
+    enable = true
+    url = "https://commento.io"
+
+[markup]
+  [markup.highlight]
+    codeFences = false
+
+[services]
+  [services.instagram]
+    disableInlineCSS = true
+
+  [services.twitter]
+    disableInlineCSS = true
