@@ -1,3 +1,7 @@
-baseURL = "http://example.org/"
+baseURL = "https://everything-as-code.com"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Everyting as Code"
+theme = "eac-theme"
+
+[params]
+    description = "A Blog for life long learners"
