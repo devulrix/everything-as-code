@@ -5,3 +5,5 @@ theme = "eac-theme"
 
 [params]
     description = "A Blog for life long learners"
+    # feature image for OpenGraph and Twitter
+    images = ["site-feature-image.jpg"]
