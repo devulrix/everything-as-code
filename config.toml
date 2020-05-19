@@ -7,3 +7,34 @@ theme = "eac-theme"
     description = "A Blog for life long learners"
     # feature image for OpenGraph and Twitter
     images = ["site-feature-image.jpg"]
+
+[[menu.main]]
+  name = "About"
+  url = "/about"
+
+[[menu.main]]
+  name = "Blog"
+  url = "/blog"
+
+[[menu.social]]
+    name = "GitHub"
+    url = "https://github.com/devulrix"
+    pre = "<i class='fab fa-github'></i>"
+
+[[menu.social]]
+    name = "YouTube"
+    url = "https://www.youtube.com/channel/UC4d2lgIJa9FhQeVqUaFx1BQ"
+    pre = "<i class='fab fa-youtube'></i>"
+
+[[menu.social]]
+    name = "Twitter"
+    url = "https://twitter.com/devulrix"
+    pre = "<i class='fab fa-twitter'></i>"
+
+[[menu.footer]]
+  name = "About"
+  url = "/about"
+
+[[menu.footer]]
+  name = "Privacy"
+  url = "/privacy"
