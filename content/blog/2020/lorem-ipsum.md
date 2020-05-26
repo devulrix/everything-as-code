@@ -3,6 +3,9 @@ title: "This Post is Full of Lorem Ipsum"
 date: 2020-05-24T16:56:48+02:00
 description: "This is a short description of the page"
 draft: true
+categories:
+    - Web development
+    - Blogging
 images: 
     - /images/blog/default.jpg
 ---
