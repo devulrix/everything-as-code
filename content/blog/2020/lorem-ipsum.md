@@ -4,7 +4,7 @@ date: 2020-05-24T16:56:48+02:00
 description: "This is a short description of the page"
 draft: true
 images: 
-    - /images/blog/featured-default.jpg
+    - /images/blog/default.jpg
 ---
 
 Lorem ipsum dolor sit amet, consectetur...
