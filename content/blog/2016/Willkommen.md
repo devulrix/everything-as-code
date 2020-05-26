@@ -1,14 +1,13 @@
-+++
-categories = ["Allgemein"]
-date = "2016-07-11T14:44:14+02:00"
-description = ""
-draft = false
-image = "/images/post_bg.jpg"
-tags = ["Ankündigung", "Blog"]
-title = "Willkommen auf unserer neuen Webseite"
-author = "@mydigamma"
-author_twitter = "https://twitter.com/MyDigamma"
-+++
+---
+title: "Willkommen auf unserer neuen Webseite"
+date: 2016-07-11T14:44:14+02:00
+description: ""
+categories: 
+    - "General"
+images: 
+    - /images/blog/default.jpg
+draft: false
+---
 
 Nachdem Ulrich Hölscher [@DevUlrix](https://twitter.com/DevUlrix) und ich
 [@mydigamma](https://twitter.com/MyDigamma) im März 2016 mit einer virtuellen Meetup-Gruppe und einem Youtube-Kanal angefangen haben über die Container Technologie [Docker](https://docker.com) auszubilden, entwickelt sich alles sehr schnell weiter.
