@@ -2,8 +2,8 @@
 title: "About"
 date: 2020-05-26T20:27:16+02:00
 draft: false
-heroimage: /images/ulrich.jpg
-herotext: Helping you succeed in life
+heroimage: /images/ulrich-full2.jpg
+herotext: A blog for life long learning
 layout: about
 ---
 
