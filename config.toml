@@ -8,6 +8,7 @@ theme = "eac-theme"
     # feature image for OpenGraph and Twitter
     images = ["site-feature-image.jpg"]
     author = "Ulrich Hoelscher"
+    authorDescription = "Platform Architect"
     authorImage = "/images/ulrich.jpg"
 
 [[menu.main]]

@@ -1,28 +1,40 @@
 {{ define "main" }}
-<section class="section">
-        <div class="columns is-centered">
-            <div class="column max-800px">
-                <h1 class="title is-1 narrow-background">
-                    {{ .Title }}
-                </h1>
-                <div class="tile is-ancestor">
-                    <div class="tile is-parent">
-                        <article class="tile is is-child is-primary">
-                            <div class="content">
-                                {{ .Content }}
-                            </div>
-                        </article>
+<div class="hero is-primary is-bold">
+    <div class="hero-body">
+        <h1 class="title is-2">
+            {{ .Title }}
+        </h1>
+    </div>
+</div>
+<div class="container has-background-white">
+    <section class="section">
+        <div class="columns">
+            <div class="column">
+                <div class="content">
+                    {{ .Content }}
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <div class="card">
+                    <div class="card-image" style="max-width: 400px;margin: 0 auto">
+                        <figure class="image">
+                            <img src="{{ .Params.heroimage }}" alt="" style="padding: 2em;" class="is-rounded fit-cover">
+                        </figure>
                     </div>
-                    <div class="tile is-parent">
-                        <article class="tile is-child">
-                            <div class="box">
-                                <figure class="image">
-                                    <img src="{{ .Params.heroimage }}" alt="" class="is-rounded fit-cover">
-                                </figure>
-                            </div>
-                        </article>
+                    <div class="card-content has-text-centered">
+                        <p class="title is-4">{{ .Site.Params.Author }}</p>
+                        <p class="autho">{{ .Site.Params.AuthorDescription }}</p>
+                    </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item">
+                        {{ range .Site.Menus.social }}
+                            <a href="{{ .URL }}" class="icon is-medium" title="{{ .Name }}"><span class="icon">{{ .Pre }}</span></a>
+                        {{ end }}
+                        </p>
+                    </footer>
                 </div>
             </div>
         </div>
-</section>
+    </section>
+</div>
 {{ end }}

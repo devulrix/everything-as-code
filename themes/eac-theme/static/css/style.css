@@ -30,6 +30,11 @@ body {
     height: 48px;
 }
 
+.about-card card-image {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
 .title-image {
     padding-bottom: 2em;
 }

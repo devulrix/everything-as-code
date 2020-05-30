@@ -7,9 +7,9 @@ herotext: A blog for life long learning
 layout: about
 ---
 
-Hello everybody,
+### Hello everybody,
 
-My name is Ulrich and this is my personal blog.
+My name is Ulrich and this is my personal blog. In this blog I try to share the information that I was looking for myself. I focus around new technologies and tips and tricks that I came across. If you want to know how this all started, I give you the answer below. I hope you find the information use full. If you would like to talk to me, please reach out to me.
 
 ## Who are you?
 
@@ -21,6 +21,15 @@ This is a side project of mine, and as a result I'm not able to stick to a consi
 
 ## What is the origin of "Everything As Code"?
 
+In march 2016 [@mydigamma](https://twitter.com/MyDigamma) and myself created a virtual Meetup group and a YouTube channel around container technologies. To be more precise we started learning [Docker](https://docker.com) our selfs and tried to share our findings with the community. In that time we produces some quite successful videos.  
+
+Our original mantra stands till today:  __*Keep learning ;-)*__
+
+Initially we focused on the German speaking community around my home location. This quickly changed and we switched to English. You can still find the original content our YouTube Channel.
+
+## How did you create the design of the Blog?
+
+I've been using [Hugo](https://gohugo.io) from the start in 2016. Originally I just used one of the standard themes. Then I came across an awesome blog post by [Janne Kemppainen](https://www.pakstech.com/about/) about creating a [Hugo Theme](https://www.pakstech.com/blog/introduction-to-hugo/) and I used this for this blog.
 
 
 ## How do I contact you?
