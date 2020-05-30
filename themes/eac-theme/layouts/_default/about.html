@@ -1,41 +1,28 @@
 {{ define "main" }}
 <section class="section">
-    <article>
         <div class="columns is-centered">
             <div class="column max-800px">
-                <h1 class="title is-1 has-background-primary narrow-background">
+                <h1 class="title is-1 narrow-background">
                     {{ .Title }}
                 </h1>
-                <figure class="title-image">
-                    <img src="{{ .Params.heroimage }}" alt="">
-                </figure>
-                <div class="content">
-                    {{ .Content }}
+                <div class="tile is-ancestor">
+                    <div class="tile is-parent">
+                        <article class="tile is is-child is-primary">
+                            <div class="content">
+                                {{ .Content }}
+                            </div>
+                        </article>
+                    </div>
+                    <div class="tile is-parent">
+                        <article class="tile is-child">
+                            <div class="box">
+                                <figure class="image">
+                                    <img src="{{ .Params.heroimage }}" alt="" class="is-rounded fit-cover">
+                                </figure>
+                            </div>
+                        </article>
                 </div>
             </div>
         </div>
-    </article>
 </section>
-<!-- <div class="hero is-dark is-fullheight-with-navbar" {{ with .Params.heroimage }}
-    style="background: url({{ . }}) center top; background-size:cover;" {{ end }}>
-    <div class="hero-body">
-        <div class="container max-800px">
-            <h1 class="title is-1 has-background-primary narrow-background">
-                {{ .Title }}
-            </h1>
-            {{ with .Params.herotext }}
-            <h2 class="title subtitle is-4 has-background-primary narrow-background">
-                {{ . }}
-            </h2>
-            {{ end }}
-        </div>
-    </div>
-</div>
-<div class="section">
-    <div class="container max-800px">
-        <div class="content">
-            {{ .Content }}
-        </div>
-    </div>
-</div> -->
 {{ end }}

@@ -2,9 +2,27 @@
 title: "About"
 date: 2020-05-26T20:27:16+02:00
 draft: false
-heroimage: /images/ulrich-full2.jpg
+heroimage: /images/ulrich-profile.jpg
 herotext: A blog for life long learning
 layout: about
 ---
 
-Hello everybody this is Ulrich
+Hello everybody,
+
+My name is Ulrich and this is my personal blog.
+
+## Who are you?
+
+I'm currently a Platform Architect with [VMware](https://vmware.com) in the [Tanzu](https://tanzu.vmware.com) business unit. Previously I held different roles at EMC, Dell and Pivotal. I have a diploma in Computer Science from the [RWTH Aachen University](https://rwth-aachen.de). I'm interested in exploring new technology and trying to apply theme for my customer engagements.
+
+## How often do you create new content?
+
+This is a side project of mine, and as a result I'm not able to stick to a consistent schedule. My work demands a lot of travel time. As a result of that, I haven't been able to publish anything new for quite some time. Hopefully it will get better soon. The blog is an addition to the YouTube Channel. Creating these videos takes some time. Whenever I find something interesting I'll either try to create a video for it or publish an article. 
+
+## What is the origin of "Everything As Code"?
+
+
+
+## How do I contact you?
+
+The easiest way to contact me is to reach out on [Twitter](https://twitter.com/DevUlrix). My DM's are open, so feel free to say 'Hello'. You can also use the [contact](/contact) page at the bottom of every page.
