@@ -41,3 +41,11 @@ theme = "eac-theme"
 [[menu.footer]]
   name = "Privacy"
   url = "/privacy"
+
+[[menu.footer]]
+  name = "Imprint"
+  url = "/imprint"
+
+[[menu.footer]]
+  name = "Contact"
+  url = "/contact"
