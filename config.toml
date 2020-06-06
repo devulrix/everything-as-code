@@ -9,7 +9,7 @@ theme = "eac-theme"
     images = ["site-feature-image.jpg"]
     author = "Ulrich Hoelscher"
     authorDescription = "Platform Architect"
-    authorImage = "/images/ulrich.jpg"
+    authorImage = "/images/ulrich-profile.jpg"
 
 [[menu.main]]
   name = "About"
