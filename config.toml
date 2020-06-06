@@ -7,7 +7,7 @@ theme = "eac-theme"
     description = "A Blog for life long learners"
     # feature image for OpenGraph and Twitter
     images = ["site-feature-image.jpg"]
-    author = "Ulrich Hoelscher"
+    author = "Ulrich Hölscher"
     authorDescription = "Platform Architect"
     authorImage = "/images/ulrich-profile.jpg"
 
