@@ -2,6 +2,7 @@ baseURL = "https://everything-as-code.com"
 languageCode = "en-us"
 title = "Everyting as Code"
 theme = "eac-theme"
+paginate = 6
 
 [params]
     description = "A Blog for life long learners"
