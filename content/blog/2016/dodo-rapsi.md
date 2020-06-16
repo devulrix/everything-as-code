@@ -1,14 +1,18 @@
-+++
-categories = ["Docker Donnerstag"]
-date = "2016-09-08T10:44:14+02:00"
-description = ""
-draft = false
-image = "/images/post_bg.jpg"
-tags = ["ARM", "Raspberry PI", "YouTube"]
-title = "5. DoDo: Introduction to Docker for Raspberry PI"
-author = "@devulrix"
-author_twitter = "https://twitter.com/DevUlrix"
-+++
+---
+title: "5. DoDo: Introduction to Docker for Raspberry PI"
+date: "2016-09-08T10:44:14+02:00"
+description: ""
+draft: false
+categories: 
+    - "Docker Donnerstag"
+    - "Raspberry Pi"
+images:
+    - /images/blog/2016/dodo-raspi-header.png
+tags: 
+    - ARM
+    - "Raspberry PI"
+    - "YouTube"
+---
 
 In our fifth Docker Donnerstag(DoDo) Video we cover the introduction of Docker for Respberry PI 3. We start with a fresh install of [Raspbian Jessi](https://www.raspberrypi.org/downloads/raspbian/). We install Docker and afterwards create our on Java Docker image for ARM.
 
