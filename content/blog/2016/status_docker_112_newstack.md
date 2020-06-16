@@ -14,4 +14,3 @@ author_twitter = "https://twitter.com/MyDigamma"
 [Hier](http://thenewstack.io/dockers-plan-dominate-enterprise-data-center/) ein guter Überblick über Docker Version 1.12 und das Ecosystem, welches sich um Docker herum so langsam aufbaut.
 
 Keep learning ;-)
-<!--more-->
