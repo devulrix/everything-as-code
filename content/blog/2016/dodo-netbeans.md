@@ -5,7 +5,7 @@ description: ""
 categories:
     - "Docker Donnerstag"
 images: 
-    - /images/blog/default.jpg
+    - /images/blog/2016/dodo-netbeans.png
 tags:
     - "Netbeans"
     - "Java"
@@ -14,7 +14,6 @@ draft: false
 ---
 
 In our third Docker Donnerstag(DoDo) Video we cover the introduction of Docker for Netbeans. 
-<!--more-->
 This video is based on our previous DoDo video in which we cover the basics of Docker for Windows. If you haven't watched it, have a look at it on [YouTube](https://www.youtube.com/watch?v=2cfkO70qttw) To use Docker for Netbeans you need to load the [nightly build](http://bits.netbeans.org/download/trunk/nightly/latest/).
 
 If you would like to submit your own idea for an upcoming Docker Donnerstag, send me a message on twitter.
