@@ -1,9 +1,15 @@
 {{ define "main" }}
+<div class="hero is-primary is-bold">
+    <div class="hero-body">
+        <h1 class="title is-2">
+            Category: {{ .Title }}
+        </h1>
+    </div>
+</div>
 <div class="container">
     <div class="section">
         <a href="/categories/">Back to categories</a>
         <div class="content">
-            <h1>Category: {{ .Title }}</h1>
             {{ .Content }}
         </div>
         <div class="columns is-multiline">
