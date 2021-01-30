@@ -13,7 +13,7 @@ My name is Ulrich and this is my personal blog. In this blog I try to share the 
 
 ## Who are you?
 
-I'm currently a Platform Architect with [VMware](https://vmware.com) in the [Tanzu](https://tanzu.vmware.com) business unit. Previously I held different roles at EMC, Dell and Pivotal. I have a diploma in Computer Science from the [RWTH Aachen University](https://rwth-aachen.de). I'm interested in exploring new technology and trying to apply theme for my customer engagements.
+I'm currently a Senior Platform Architect with [VMware](https://vmware.com) in the MAPBU covering the [Tanzu](https://tanzu.vmware.com) portfolio. Previously I held different roles at EMC, Dell and Pivotal. I have a diploma in Computer Science from the [RWTH Aachen University](https://rwth-aachen.de). I'm interested in exploring new technology and trying to apply theme for my customer engagements.
 
 ## How often do you create new content?
 
