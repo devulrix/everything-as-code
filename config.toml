@@ -9,8 +9,21 @@ paginate = 6
     # feature image for OpenGraph and Twitter
     images = ["site-feature-image.jpg"]
     author = "Ulrich Hölscher"
-    authorDescription = "Platform Architect"
+    authorDescription = "Senior Platform Architect"
     authorImage = "/images/ulrich-profile.jpg"
+
+[related]
+    threshold = 0 
+    includeNewer = true
+    toLower = true
+
+    [[related.indices]]
+        name = "categories"
+        weight = 100
+
+    [[related.indices]]
+        name = "date"
+        weight = 10
 
 [[menu.main]]
   name = "About"
