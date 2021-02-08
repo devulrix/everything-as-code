@@ -12,6 +12,14 @@ paginate = 6
     authorDescription = "Senior Platform Architect"
     authorImage = "/images/ulrich-profile.jpg"
 
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+
+[permalinks]
+    blog = "/blog/:filename/"
+
 [related]
     threshold = 0 
     includeNewer = true
