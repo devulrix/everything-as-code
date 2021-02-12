@@ -1,3 +1,4 @@
 # ignore the hugo output folder
 public/
 .DS_Store
+values.yml
