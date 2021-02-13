@@ -10,7 +10,7 @@ inputs:
     - name: source
 
 outputs:
-    - name: blog-depyloment
+    - name: blog-deployment
 
 run:
   path: /bin/sh
