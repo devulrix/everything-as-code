@@ -46,6 +46,10 @@ jobs:
     file: source/ci/tasks/build-hugo.yml
   - task: publish
     file: source/ci/tasks/publish.yml
+    params:
+      FTP_SERVER: ((ftp-server))
+      FTP_USERNAME: ((ftp-user))
+      FTP_PASSWORD: ((ftp-password))
   on_error:
     do:
       - put: send-an-email
