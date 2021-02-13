@@ -5,4 +5,4 @@ set -ue
 cd source 
 hugo --minify 
 
-cp -R public/* ../blog-depyloment
+cp -R public/* ../blog-deployment
