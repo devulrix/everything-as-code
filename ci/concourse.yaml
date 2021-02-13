@@ -37,6 +37,7 @@ resources:
 
 jobs:
 - name: build-and-publish
+  public: true
   plan:
   - get: source
     trigger: true
