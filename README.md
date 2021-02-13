@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/devulrix/everything-as-code.svg?branch=master)](https://travis-ci.org/devulrix/everything-as-code)
+![CI](https://ci.uhtec.dev/api/v1/teams/main/pipelines/eac-blog/badge)
 
 # Everything as Code
 
