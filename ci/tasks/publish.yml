@@ -8,7 +8,7 @@ image_resource:
 
 inputs:
 - name: source
-- name: blog-deployment
+- name: blog-depyloment
 
 params:
     FTP_SERVER:
