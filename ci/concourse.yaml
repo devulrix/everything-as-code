@@ -9,7 +9,7 @@ resource_types:
 resources:
 - name: source
   type: git
-  icon: github-circle
+  icon: github
   check_every: 15m
   source:
     uri: https://github.com/devulrix/everything-as-code.git
