@@ -1,4 +1,4 @@
-![CI](https://ci.uhtec.dev/api/v1/teams/main/pipelines/eac-blog/badge)
+[![CI](https://ci.uhtec.dev/api/v1/teams/main/pipelines/eac-blog/badge)](https://ci.uhtec.dev/teams/main/pipelines/eac-blog)
 
 # Everything as Code
 
