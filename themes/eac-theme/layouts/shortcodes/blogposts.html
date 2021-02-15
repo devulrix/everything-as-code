@@ -7,7 +7,9 @@
         <div class="columns is-multiline">
             {{ range first $count $pages }}
             <div class="column is-one-third">
-                {{ partial "widgets/post-card.html" . }}
+                <div class="column is-full">
+                    {{ partial "widgets/post-card.html" . }}
+                </div>
             </div>
             {{ end }}
         </div>

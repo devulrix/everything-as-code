@@ -1,7 +1,7 @@
 {{ $permalink := .Permalink }}
 <div class="card">
     <div class="card-image">
-        <figure class="image">
+        <figure class="image is-3by2">
             {{ with .Params.images }}
             <a href="{{ $permalink }}"><img src="{{ index . 0 }}" alt=""></a>
             {{ end }}
@@ -13,7 +13,7 @@
         <div class="content">
             {{ .Summary }}
         </div>
-        <div class="tags is-pulled-right">
+        <div class="tags is-pulled-right skew">
             {{ range .Params.categories }}
             <a class="tag is-primary is-radiusless" href="/categories/{{ . | urlize}}">{{ . }}</a>
             {{ end }}

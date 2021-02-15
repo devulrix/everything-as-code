@@ -1,5 +1,5 @@
- {{ define "main" }}
- <div class="hero is-primary is-bold">
+{{ define "main" }}
+<div class="hero is-primary is-bold">
     <div class="hero-body">
         <h1 class="title is-2">
             {{ .Title }}
@@ -11,10 +11,12 @@
         <div class="content">
             {{ .Content }}
         </div>
-        <div class="columns is-multiline">
+        <div class="row columns is-multiline">
             {{ range .Paginator.Pages }}
             <div class="column is-half">
-                {{ partial "widgets/post-card.html" . }}
+                <div class="column is-full">
+                    {{ partial "widgets/post-card.html" . }}
+                </div>
             </div>
             {{ end }}
         </div>
