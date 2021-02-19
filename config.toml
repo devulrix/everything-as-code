@@ -72,6 +72,6 @@ paginate = 6
   name = "Imprint"
   url = "/imprint"
 
-[[menu.footer]]
-  name = "Contact"
-  url = "/contact"
+# [[menu.footer]]
+#   name = "Contact"
+#   url = "/contact"

@@ -6,11 +6,11 @@ heroimage: /images/contact.jpg
 buttons:
 - name: Phone
   icon: fas fa-phone
-  href: "tel:555555555"
+  href: "tel:021519717927"
 - name: Contact form
   icon: fas fa-envelope
   id: open-modal
-map: Neuss, Germany
-draft: false
+map: Krefeld, Germany
+draft: true
 ---
 You can reach me on [Twitter](https://twitter.com/devulrix) or use the contact form.
