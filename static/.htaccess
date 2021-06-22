@@ -1,1 +1,7 @@
 ErrorDocument 404 https://everything-as-code.com/404.html
+
+Header set Strict-Transport-Security "max-age=10886400; includeSubDomains; preload"
+Header always set X-Frame-Options "DENY"
+Header set X-Content-Type-Options nosniff
+Header add Content-Security-Policy "default-src 'self' *.cloudflare.com; img-src *; script-src 'self' *.cloudflare.com;"
+Header set X-XSS-Protection "1; mode=block"
