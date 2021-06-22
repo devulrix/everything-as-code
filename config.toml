@@ -4,6 +4,21 @@ title = "Everyting as Code"
 theme = "eac-theme"
 paginate = 6
 
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.twitter]
+    disable = true
+  [privacy.vimeo]
+    disable = true
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true
+
 [params]
     description = "A Blog for life long learners"
     # feature image for OpenGraph and Twitter
