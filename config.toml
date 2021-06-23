@@ -16,8 +16,7 @@ paginate = 6
   [privacy.vimeo]
     disable = true
   [privacy.youtube]
-    disable = false
-    privacyEnhanced = true
+    disable = true
 
 [params]
     description = "A Blog for life long learners"

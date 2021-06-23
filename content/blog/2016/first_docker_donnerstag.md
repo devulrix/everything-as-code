@@ -19,4 +19,4 @@ Um die Reihe zu einem Erfolg werden zu lassen, brauchen wir euer Feedback. Gerne
 
 Viel Spaß mit dem Video!
 
-{{< youtube QG0jSv934GI >}}
+{{< youtube-video videoid=QG0jSv934GI >}}

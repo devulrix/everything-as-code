@@ -20,4 +20,4 @@ In unserem Video gebe ich eine Einführung in Rancher. Wir installieren Rancher 
 
 Viel Spaß mit dem Video!
 
-{{< youtube 7UJBYoeY6O8 >}}
+{{< youtube-video videoid=7UJBYoeY6O8 >}}

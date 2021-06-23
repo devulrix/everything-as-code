@@ -22,4 +22,4 @@ If you would like to submit your own idea for an upcoming Docker Donnerstag, sen
 
 Have fun with the video.
 
-{{< youtube HsrwrBjkdrU >}}
+{{< youtube-video videoid=HsrwrBjkdrU >}}
