@@ -1,27 +1,30 @@
 ---
-title: "Vsphere7 Tanzu Avi"
+title: "Getting started with Tanzu and NSX Advanced Load Balancer"
 description: 
-date: 2021-10-25T21:10:23+02:00
+date: 2021-11-02T10:10:23+02:00
 images: 
     - /images/blog/default.jpg
 categories:
     - Tanzu
-    - vSphere
     - VMware
     - Kubernetes
-    - AVI
     - Tutorial
-draft: true
+draft: false
 ---
-# Installing vSphere 7 with Tanzu and NSX Advanced Loadbalancer (AVI)
+This is a multipart series in which I'll be showing 
 
+## Installing vSphere 7 with Tanzu and NSX Advanced Loadbalancer (AVI)
 
+## Prerequisites
 
 ## Overview & Setup
 
 In this tutorial I'm going to describe in detail the setup with vSphere Networking using the NSX Advanced Loabalancer. 
 
 ### vSphere with Tanzu - vSphere Networking
+
+![Network Setup for NSX Advanced Loadbalancer and Tanzu](networkmodel.png)
+
 
 ## Supervisor Cluster Setup
 
