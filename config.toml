@@ -31,8 +31,8 @@ paginate = 6
         [markup.goldmark.renderer]
             unsafe = true
 
-[permalinks]
-    blog = "/blog/:filename/"
+# [permalinks]
+#     blog = "/blog/:filename/"
 
 [related]
     threshold = 0 
