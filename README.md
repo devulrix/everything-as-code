@@ -1,4 +1,4 @@
-[![CI](https://ci.uhtec.dev/api/v1/teams/main/pipelines/eac-blog/badge)](https://ci.uhtec.dev/teams/main/pipelines/eac-blog)
+![CI](https://github.com/devulrix/everything-as-code/actions/workflows/hugo-deploy.yaml/badge.svg)
 
 # Everything as Code
 
