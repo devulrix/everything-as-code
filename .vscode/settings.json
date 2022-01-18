@@ -1,0 +1,21 @@
+{
+    "grammarly.overrides": [
+        {
+            "files": [
+                "**/everything-as-code/content/blog/2022/tanzu-avi-install/index.md"
+            ],
+            "config": {
+                "audience": "expert",
+                "dialect": "american",
+                "domain": "technical",
+                "emotions": [
+                    "neutral",
+                    "confident"
+                ],
+                "goals": [
+                    "inform"
+                ]
+            }
+        }
+    ]
+}
