@@ -2,3 +2,6 @@
 public/
 .DS_Store
 values.yml
+
+# hugo log
+.hugo_build.lock
