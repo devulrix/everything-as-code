@@ -3,19 +3,32 @@ title: "Getting started with Tanzu and NSX Advanced Load Balancer"
 description: 
 date: 2021-11-02T10:10:23+02:00
 images: 
-    - /images/blog/default.jpg
+    - /images/blog/2021/tanzu-vds.jpg
 categories:
     - Tanzu
     - VMware
     - Kubernetes
     - Tutorial
-draft: false
+draft: true
 ---
-This is a multipart series in which I'll be showing 
+**Disclaimer**  This is not an official VMware Guide.
+
+In this multipart series, we will be installing Tanzu Kubernetes Grid Service with vSphere 7 and vSphere Networking. With the update of vSphere 7U2 the support for AVI (NSX Advanced Load balancer) was added.<br>
+In this documentation we will be using the vSphere 7U3 update to get the latest features.
+
+The corespoding YouTube video for this blog. If you want to see me do it step by step have a look at the video:
+
+YouTube
+
+If you're looking for a fast and easy automated installtion have a look at William Lam's script.
+## Prerequisites
+
+Before we can start we need to make sure that we meet the latest critieria for the environment. 
+
+* 3 ESXi 
+
 
 ## Installing vSphere 7 with Tanzu and NSX Advanced Loadbalancer (AVI)
-
-## Prerequisites
 
 ## Overview & Setup
 
