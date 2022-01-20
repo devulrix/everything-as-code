@@ -1,11 +1,14 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-description: 
-date: {{ .Date }}
-images: 
-    - /images/blog/default.jpg
-categories:
-    - Web development
-    - Blogging
+date: {{ .Date }}  
+author: {{ .Site.Params.author }}
+authorLink: {{ .Site.Params.authorURL }}
+
+featuredImage: ""
+featuredImageAlt: ""
+
+categories: []
+tags: []
+
 draft: true
 ---
