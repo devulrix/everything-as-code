@@ -20,7 +20,7 @@
                                 </div>
                                 {{ end }}
                                 <div class="column">
-                                    <p>{{ .Site.Params.Author }}</p>
+                                    <a href="{{ .Params.authorLink }}"><p>{{ .Params.author }}</p></a>
                                     <p><time>{{ .PublishDate.Format "January 2, 2006" }}</time> |
                                         {{ .ReadingTime }} {{ if eq .ReadingTime 1 }} minute {{ else }} minutes
                                         {{ end }}
@@ -36,11 +36,9 @@
                         </div>
                     </div>
                 </div>
-                {{ with .Params.images }}
                 <figure class="title-image is-flex is-justify-content-center">
-                    <img src="{{ index . 0 }}" alt="">
+                    <img src="{{ .Params.featuredImage }}" alt="{{ .Params.featuredImageAlt }}">
                 </figure>
-                {{ end }}
                 <div class="content">
                     {{ .Content }}
                 </div>

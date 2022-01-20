@@ -1,18 +1,16 @@
 ---
 title: "Einführung in Rancher Video online"
 date: "2016-07-21T10:44:14+02:00"
-description: ""
+author: Ulrich Hölscher
+authorLink: https://twitter.com/devulrix
+
+featuredImage: "rancher-intro.png"
+featuredImageAlt: "Rancher Logo"
+
+categories: ["Docker"]
+tags: ["Rancher","Docker","YouTube"]
+
 draft: false
-categories: 
-    - "Docker"
-    - "Meetup"
-images: 
-    - "/images/blog/2016/rancher-intro.png"
-tags:
-    - "Rancher"
-    - "Docker"
-    - "YouTube"
-    - "Meetup"
 ---
 
 Mit etwas Verzögerung haben wir heute das YouTube Video zu unserem letzten LiveStream online gestellt.

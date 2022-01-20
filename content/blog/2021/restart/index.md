@@ -1,11 +1,15 @@
 ---
 title: "Restart the blog"
-description: 
 date: 2021-11-01T09:57:34+01:00
-images: 
-    - /images/blog/2021/laptop-garden.jpg
-categories:
-    - General
+author: Ulrich Hölscher
+authorLink: https://twitter.com/devulrix
+
+featuredImage: "laptop-garden.jpg"
+featuredImageAlt: "Laptop on table with blured garden view"
+
+categories: ["General"]
+tags: []
+
 draft: false
 ---
 Hi everybody,

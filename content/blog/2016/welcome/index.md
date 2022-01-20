@@ -1,11 +1,15 @@
 ---
 title: "Willkommen auf unserer neuen Webseite"
 date: 2016-07-11T14:44:14+02:00
-description: ""
-categories: 
-    - "General"
-images: 
-    - /images/blog/default.jpg
+author: Ulrich Hölscher
+authorLink: https://twitter.com/devulrix
+
+featuredImage: "default.jpg"
+featuredImageAlt: "Code Editor mit Code open on a Laptop. Syntaxhighlighting activated "
+
+categories: ["General"]
+tags: []
+
 draft: false
 ---
 

@@ -1,15 +1,15 @@
 ---
 title: "3. DoDo: Introduction to Docker for Netbeans"
 date: "2016-08-11T10:44:14+02:00"
-description: ""
-categories:
-    - "Docker Donnerstag"
-images: 
-    - /images/blog/2016/dodo-netbeans.png
-tags:
-    - "Netbeans"
-    - "Java"
-    - "YouTube"
+author: Ulrich Hölscher
+authorLink: https://twitter.com/devulrix
+
+featuredImage: "dodo-netbeans.png"
+featuredImageAlt: "Docker logo + Netbeans logo"
+
+categories: ["Docker Donnerstag"]
+tags: ["Netbeans","Java","YouTube"]
+
 draft: false
 ---
 

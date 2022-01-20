@@ -1,14 +1,15 @@
 ---
 title: "Getting started with Tanzu and NSX Advanced Load Balancer"
-description: 
-date: 2022-18-01T10:10:23+02:00
-images: 
-    - /images/blog/2021/tanzu-vds.jpg
-categories:
-    - Tanzu
-    - VMware
-    - Kubernetes
-    - Tutorial
+date: 2022-02-01T09:57:34+01:00
+author: Ulrich Hölscher
+authorLink: https://twitter.com/devulrix
+
+featuredImage: "tanzu-vds.jpg"
+featuredImageAlt: "VMware Tanzu Logo"
+
+categories: ["Tanzu","VMware","Kubernetes","Tutorial"]
+tags: []
+
 draft: true
 ---
 **Disclaimer**  This is not an official VMware Guide.

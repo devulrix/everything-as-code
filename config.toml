@@ -4,6 +4,9 @@ title = "Everyting as Code"
 theme = "eac-theme"
 paginate = 6
 
+enableGitInfo = true
+enableEmoji = true
+
 [privacy]
   [privacy.disqus]
     disable = true
@@ -25,6 +28,7 @@ paginate = 6
     author = "Ulrich Hölscher"
     authorDescription = "Senior Platform Architect"
     authorImage = "/images/ulrich-profile.jpg"
+    authorURL = "https://twitter.com/devulrix"
 
 [markup]
     [markup.goldmark]
