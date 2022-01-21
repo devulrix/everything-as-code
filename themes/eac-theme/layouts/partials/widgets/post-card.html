@@ -7,7 +7,7 @@
     </div>
     <div class="card-content">
         <a class="title is-4" href="{{ .Permalink }}">{{ .Title }}</a>
-        <span class="heading">{{ .Site.Params.Author }} | <time>{{ .PublishDate.Format "January 2, 2006"}}</time></span>
+        <span class="heading"><a href="{{ .Params.authorLink }}">{{ .Params.author }}</a> | <time>{{ .PublishDate.Format "January 2, 2006"}}</time></span>
         <div class="content">
             {{ .Summary }}
         </div>
