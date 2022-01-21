@@ -2,7 +2,7 @@
 <div class="card">
     <div class="card-image">
         <figure class="image is-3by1">
-            <a href="{{ $permalink }}"><img src="{{ printf "%s%s" .File.Dir .Params.featuredImage }}" alt="{{ .Params.featuredImageAlt }}"></a>
+            <a href="{{ $permalink }}"><img src="{{ printf "%s%s" .File.Dir .Params.featuredImage | absURL }}" alt="{{ .Params.featuredImageAlt }}"></a>
         </figure>
     </div>
     <div class="card-content">
