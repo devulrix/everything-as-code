@@ -19,9 +19,7 @@
                         <a href="{{ .Page.Permalink }}">
                             <figure class="image">
                                 {{ $firstChild := index .Pages 0 }}
-                                {{ with $firstChild.Params.images }}
-                                <img src="{{ index . 0 }}" alt="">
-                                {{ end }}
+                                <img src="{{ printf "%s%s" $firstChild.File.Dir $firstChild.Params.featuredImage | absURL  }}" alt="{{ $firstChild.Params.featuredImageAlt }}">
                             </figure>
                         </a>
                     </div>
