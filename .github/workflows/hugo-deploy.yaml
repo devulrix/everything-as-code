@@ -30,3 +30,4 @@ jobs:
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWORD }}
           local-dir: ./public/
+          dangerous-clean-slate: true
