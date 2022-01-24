@@ -9,7 +9,7 @@ layout: about
 
 ### Hello everybody,
 
-My name is Ulrich and this is my personal blog. In this blog I try to share the information that I was looking for myself. I focus around new technologies and tips and tricks that I came across. If you want to know how this all started, I give you the answer below. I hope you find the information use full. If you would like to talk to me, please reach out to me.
+My name is Ulrich and this is my blog. In this blog, I try to share the information that I was looking for myself. I focus on new technologies and tips and tricks that I came across. If you want to know how this all started, I give you the answer below. I hope you find the information use full. If you would like to talk to me, please reach out to me.
 
 ## Who are you?
 
