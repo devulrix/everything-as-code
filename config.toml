@@ -24,7 +24,7 @@ enableEmoji = true
 [params]
     description = "A Blog for life long learners"
     # feature image for OpenGraph and Twitter
-    images = ["site-feature-image.jpg"]
+    images = ["logo-wide.svg"]
     author = "Ulrich Hölscher"
     authorDescription = "Senior Platform Architect"
     authorImage = "/images/ulrich-profile.jpg"
@@ -37,6 +37,10 @@ enableEmoji = true
 
 # [permalinks]
 #     blog = "/blog/:filename/"
+
+[taxonomies]
+  category = 'categories'
+  series = 'series'
 
 [related]
     threshold = 0 
@@ -60,8 +64,12 @@ enableEmoji = true
   url = "/blog"
 
 [[menu.main]]
-    name = "Categories"
-    url = "/categories"
+  name = "Categories"
+  url = "/categories"
+
+#[[menu.main]]
+#  name = "Series"
+#  url = "/series"
 
 [[menu.social]]
     name = "GitHub"

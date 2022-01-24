@@ -7,7 +7,7 @@ authorLink: https://twitter.com/devulrix
 featuredImage: "dodo-raspi-header.png"
 featuredImageAlt: "Docker Logo + Raspbery Pi logo"
 
-categories: ["Docker Donnerstag","Raspberry Pi"]
+categories: ["YouTube"]
 tags: ["ARM","Raspberry PI","YouTube"]
 
 draft: false

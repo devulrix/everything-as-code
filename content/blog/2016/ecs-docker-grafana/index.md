@@ -7,8 +7,8 @@ authorLink: https://twitter.com/devulrix
 featuredImage: "ecs-grafana.png"
 featuredImageAlt: "Grafana Logo + ECS Logo"
 
-categories: ["Docker"]
-tags: ["EMC", "ECS", "Docker", "Monitoring", "Grafana"]
+categories: ["Container"]
+tags: ["EMC", "ECS", "Container", "Monitoring", "Grafana"]
 
 draft: false
 ---

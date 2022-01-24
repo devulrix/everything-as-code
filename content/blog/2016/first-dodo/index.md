@@ -7,7 +7,7 @@ authorLink: https://twitter.com/devulrix
 featuredImage: "dodo-github.png"
 featuredImageAlt: "Docker Logo + GitHub Logo"
 
-categories: ["Docker Donnerstag"]
+categories: ["YouTube"]
 tags: ["GitHub", "Docker Hub", "YouTube"]
 
 draft: false

@@ -7,7 +7,7 @@ authorLink: https://twitter.com/devulrix
 featuredImage: "dodo-netbeans.png"
 featuredImageAlt: "Docker logo + Netbeans logo"
 
-categories: ["Docker Donnerstag"]
+categories: ["YouTube"]
 tags: ["Netbeans","Java","YouTube"]
 
 draft: false

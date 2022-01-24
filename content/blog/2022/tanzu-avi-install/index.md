@@ -7,7 +7,7 @@ authorLink: https://twitter.com/devulrix
 featuredImage: "tanzu-vds.jpg"
 featuredImageAlt: "VMware Tanzu Logo"
 
-categories: ["Tanzu","VMware","Kubernetes","Tutorial"]
+categories: ["Tanzu","VMware","Kubernetes"]
 tags: []
 
 draft: true

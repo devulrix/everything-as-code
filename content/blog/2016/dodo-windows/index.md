@@ -7,7 +7,7 @@ authorLink: https://twitter.com/devulrix
 featuredImage: "dodo-windows.png"
 featuredImageAlt: "Docker Logo + Windows 10 Logo"
 
-categories: ["Docker Donnerstag"]
+categories: ["YouTube"]
 tags: ["Windows","YouTube"]
 
 draft: false

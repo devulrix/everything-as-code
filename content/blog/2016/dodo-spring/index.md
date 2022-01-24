@@ -7,7 +7,7 @@ authorLink: https://twitter.com/devulrix
 featuredImage: "dodo-docker-spring.png"
 featuredImageAlt: "Docker Logo + Spring Logo"
 
-categories: ["Docker Donnerstag"]
+categories: ["YouTube"]
 tags: ["Spring","Netbeans","Java","YouTube"]
 
 draft: false   

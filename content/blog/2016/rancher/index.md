@@ -7,8 +7,8 @@ authorLink: https://twitter.com/devulrix
 featuredImage: "rancher-intro.png"
 featuredImageAlt: "Rancher Logo"
 
-categories: ["Docker"]
-tags: ["Rancher","Docker","YouTube"]
+categories: ["Container"]
+tags: ["Rancher","Container","YouTube"]
 
 draft: false
 ---
