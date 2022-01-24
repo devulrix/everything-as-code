@@ -7,12 +7,14 @@ authorLink: https://twitter.com/devulrix
 featuredImage: "tanzu-vds.jpg"
 featuredImageAlt: "VMware Tanzu Logo"
 
-categories: ["Tanzu","VMware","Kubernetes"]
+categories: ["Tanzu","Kubernetes"]
 tags: []
 
 draft: true
 ---
 **Disclaimer**  This is not an official VMware Guide.
+
+{{< message type="error" title="Disclaimer" body="This is not an official VMware Guide." >}}
 
 In this multipart series, we will be installing Tanzu Kubernetes Grid Service with vSphere 7 and vSphere Networking. With the update of vSphere 7U2 the support for AVI (NSX Advanced Load balancer) was added.<br>
 In this documentation, we will be using the vSphere 7U3 update to get the latest features.

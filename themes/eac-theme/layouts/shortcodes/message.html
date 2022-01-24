@@ -1,0 +1,27 @@
+
+{{ $type := .Get "type" }}
+{{ $isWarning := eq ($type) "warning" }}
+{{ $isError := eq ($type) "error" }}
+{{ $isInfo := eq ($type) "info" }}
+
+{{ $title := .Get "title"  }}
+{{ $message := .Get "body" }}
+
+{{ if ($isWarning) -}}
+<article class="message is-warning">
+{{- end }}
+
+{{ if ($isError) -}}
+<article class="message is-danger">
+{{- end }}
+
+{{ if ($isInfo) -}}
+<article class="message is-info">
+{{- end }}
+    <div class="message-header">
+        <p>{{ $title }}</p>
+    </div>
+    <div class="message-body">
+        {{ $message }}
+    </div>
+</article>
