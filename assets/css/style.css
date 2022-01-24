@@ -35,6 +35,17 @@ body {
     margin: 0 auto;
 }
 
+.eac-logo {
+    max-height: 2.5rem; 
+    min-height: 2rem;
+}
+
+.about-image {
+    padding: 2em;
+    object-fit: "fit-cover";
+    border-radius: 50%;
+}
+
 .title-image {
     padding-bottom: 2em;
 }
