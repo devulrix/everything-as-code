@@ -5,7 +5,8 @@
 {{ $isInfo := eq ($type) "info" }}
 
 {{ $title := .Get "title"  }}
-{{ $message := .Get "body" }}
+
+{{- $inner := .Inner | .Page.RenderString -}}
 
 {{ if ($isWarning) -}}
 <article class="message is-warning">
@@ -22,6 +23,6 @@
         <p>{{ $title }}</p>
     </div>
     <div class="message-body">
-        {{ $message }}
+        {{- $inner -}}
     </div>
 </article>
