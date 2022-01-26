@@ -14,11 +14,10 @@
                     <div class="columns is-vcentered">
                         <div class="column">
                             <div class="columns is-vcentered is-mobile">
-                                {{ with .Site.Params.authorImage }}
                                 <div class="column is-narrow">
-                                    <img src="{{ . }}" class="author-image">
+                                    {{ $picture := resources.Get .Site.Params.authorImage }}
+                                    <img src="{{ $picture.Permalink }}" class="author-image" alt="picture of the author">
                                 </div>
-                                {{ end }}
                                 <div class="column">
                                     <a href="{{ .Params.authorLink }}"><p>{{ .Params.author }}</p></a>
                                     <p><time>{{ .PublishDate.Format "January 2, 2006" }}</time> |

@@ -18,7 +18,9 @@
                 <div class="card">
                     <div class="image">
                         <figure class="image">
-                            <img src="{{ .Params.heroimage }}" alt="Picture of Ulrich" class="about-image">
+                            {{ $picture := resources.Get .Params.heroimage }}
+                            {{ $picture := $picture.Resize "400x webp photo"}}
+                            <img src="{{ $picture.Permalink }}" alt="Picture of Ulrich" class="about-image">
                         </figure>
                     </div>
                     <div class="card-content has-text-centered">
