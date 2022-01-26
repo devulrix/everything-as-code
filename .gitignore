@@ -5,3 +5,6 @@ values.yml
 
 # hugo log
 .hugo_build.lock
+
+# ignore generated images
+resources/_gen/*
