@@ -7,7 +7,7 @@ Header add Content-Security-Policy "default-src 'self' *.cloudflare.com; img-src
 Header set X-XSS-Protection "1; mode=block"
 
 # images cached for 1 month
-<filesMatch ".(ico|jpg|jpeg|png|gif|webmanifest)$">
+<filesMatch ".(ico|jpg|jpeg|png|gif|webmanifest|svg)$">
  Header set Cache-Control "max-age=2592000, public"
 </filesMatch>
 
