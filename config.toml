@@ -27,7 +27,7 @@ enableEmoji = true
     images = ["logo-wide.svg"]
     author = "Ulrich Hölscher"
     authorDescription = "Senior Platform Architect"
-    authorImage = "/images/ulrich-profile.jpg"
+    authorImage = "/images/ulrich-small.webp"
     authorURL = "https://twitter.com/devulrix"
 
 [markup]
