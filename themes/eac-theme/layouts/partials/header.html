@@ -4,7 +4,7 @@
             <div class="navbar-brand">
                 <a href="/" title="home" class="navbar-item">
                     {{ $logo := resources.Get "images/logo-wide.svg" | resources.Minify }} 
-                    <img src="{{ $logo.Permalink }}" alt="Everything as Code" class="eac-logo" alt="Everything as Code">
+                    <img src="{{ $logo.Permalink }}" width="200" height="32" alt="Everything as Code" class="eac-logo" alt="Everything as Code">
                 </a>
                 {{ range .Site.Menus.social }}
                 <a href="{{ .URL }}" class="navbar-item is-hidden-desktop" title="{{ .Name }}"><span
