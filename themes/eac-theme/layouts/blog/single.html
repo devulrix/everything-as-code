@@ -16,7 +16,7 @@
                             <div class="columns is-vcentered is-mobile">
                                 <div class="column is-narrow">
                                     {{ $picture := resources.Get .Site.Params.authorImage }}
-                                    <img src="{{ $picture.Permalink }}" class="author-image" alt="picture of the author">
+                                    <img src="{{ $picture.Permalink }}" width="$picture.Width" height="$picture.Height" class="author-image" alt="picture of the author">
                                 </div>
                                 <div class="column">
                                     <a href="{{ .Params.authorLink }}"><p>{{ .Params.author }}</p></a>
@@ -36,7 +36,8 @@
                     </div>
                 </div>
                 <figure class="title-image is-flex is-justify-content-center">
-                    <img src="{{ .Params.featuredImage }}" alt="{{ .Params.featuredImageAlt }}">
+                    {{ $localImage := .Page.Resources.GetMatch .Params.featuredImage }}
+                    {{ partial "widgets/image.html" (dict "image" $localImage "large" "776x" "medium" "540x" "small" "422x" ) . }}
                 </figure>
                 <div class="content">
                     {{ .Content }}

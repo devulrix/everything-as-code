@@ -1,0 +1,25 @@
+{{ $src :=  .image }}
+{{ $large := .large }}
+{{ $medium := .medium}}
+{{ $small := .small }}
+{{ $type := "photo"}}
+{{ $format := "webp" }}
+{{ $alt := "alt"}}
+{{ $lazy := false }}
+
+<picture>
+    {{ $small := printf "%s %s %s" $small $format $type}}
+    {{/*  media="(min-width:{{ strings.TrimSuffix "x" $large }})"  */}}
+    
+    {{ $largePicture := $src.Resize (printf "%s %s %s" $large $format $type)}}
+    <source  srcset="{{ $largePicture.Permalink }}" media="(min-width: 600px)" type="image/webp">
+    
+    {{ $mediumPicture := $src.Resize (printf "%s %s %s" $medium $format $type)}}
+    <source  srcset="{{ $mediumPicture.Permalink }}" media="(min-width: 500px)" type="image/webp">
+    
+    {{ $smallPicture := $src.Resize  $small }} 
+    <source  srcset="{{ $smallPicture.Permalink }}" type="image/webp">
+
+
+    <img src="{{ $src }}" width="{{ $largePicture.Width }}" height="{{ $largePicture.Height }}" alt="{{ $alt }}" decoding="async"/>
+</picture>
