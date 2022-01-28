@@ -37,7 +37,7 @@
                 </div>
                 <figure class="title-image is-flex is-justify-content-center">
                     {{ $localImage := .Page.Resources.GetMatch .Params.featuredImage }}
-                    {{ partial "widgets/image.html" (dict "image" $localImage "large" "776x" "medium" "540x" "small" "422x" ) . }}
+                    {{ partial "widgets/image.html" (dict "image" $localImage "large" "776" "small" "422" "alt" .Params.featuredImageAlt) . }}
                 </figure>
                 <div class="content">
                     {{ .Content }}
