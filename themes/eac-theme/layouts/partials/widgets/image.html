@@ -1,7 +1,9 @@
 {{ $src :=  .image }}
-{{ $large := printf ("%sx") .large }}
+{{ $largePicture := .image }}
+{{ $smallPicture := .image }}
+{{ $large := printf ("%sx") .large | default "0"}}
 {{ $minLarge := .minLarge | default "400px"}}
-{{ $small := printf ("%sx") .small }}
+{{ $small := printf ("%sx") .small | default "0"}}
 {{ $minSmall := .minSmall | default "200px"}}
 {{ $type := .type | default "photo"}}
 {{ $format := .format | default "webp" }}
@@ -10,11 +12,19 @@
 
 <picture>
     
-    {{ $largePicture := $src.Resize (printf "%s %s %s" $large $format $type)}}
-    <source  srcset="{{ $largePicture.Permalink }}" media="(min-width: 400px)" type="image/webp">
-    
-    {{ $smallPicture := $src.Resize  (printf "%s %s %s" $small $format $type) }} 
-    <source  srcset="{{ $smallPicture.Permalink }}" media="(min-width: 200px)" type="image/webp">
+    {{ if ne $large "0" }}
+        {{ $largePicture = $src.Resize (printf "%s %s %s" $large $format $type)}}
+        <source  srcset="{{ $largePicture.Permalink }}" media="(min-width: 400px)" type="image/webp">
+    {{ end }}
 
-    <img src="{{ $src }}" width="{{ $largePicture.Width }}" height="{{ $largePicture.Height }}" alt="{{ $alt }}" decoding="async"/>
+    {{ if ne $small "0" }}
+        {{ $smallPicture = $src.Resize  (printf "%s %s %s" $small $format $type) }} 
+        <source  srcset="{{ $smallPicture.Permalink }}" media="(min-width: 200px)" type="image/webp">
+    {{ end }}
+
+    {{ if ne $large "0" }}
+        <img src="{{ $src }}" width="{{ $largePicture.Width }}" height="{{ $largePicture.Height }}" alt="{{ $alt }}" decoding="async"/>
+    {{ else }}
+        <img src="{{ $src }}" width="{{ $smallPicture.Width }}" height="{{ $smallPicture.Height }}" alt="{{ $alt }}" decoding="async"/>
+    {{ end }}
 </picture>
