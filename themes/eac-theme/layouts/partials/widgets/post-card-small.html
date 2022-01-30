@@ -7,7 +7,7 @@
             {{ with .Resources }}
                 {{ with .GetMatch "{*.jpg,*.png,*.jpeg}" }}
                     {{ printf "resource: %s " . }}
-                    {{ $photo := .Resize "350x webp photo"}}
+                    {{ $photo := .Resize "348x116 webp photo"}}
                     {{ with $photo }}
                     src='{{ .Permalink }}'
                     {{ end }}
