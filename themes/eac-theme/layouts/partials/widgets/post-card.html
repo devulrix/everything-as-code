@@ -7,7 +7,7 @@
                 {{ with .Resources }}
                     {{ with .GetMatch "{*.jpg,*.png,*.jpeg}" }}
                         {{ printf "resource: %s " . }}
-                        {{ $photo := .Resize "348x116 webp photo"}}
+                        {{ $photo := .Resize "600x200 webp photo"}}
                         {{ with $photo }}
                         src='{{ .Permalink }}'
                         {{ end }}
@@ -20,7 +20,7 @@
         <a class="title is-4" href="{{ .Permalink }}">{{ .Title }}</a>
         <span class="heading"><a href="{{ .Params.authorLink }}">{{ .Params.author }}</a> | <time>{{ .PublishDate.Format "January 2, 2006"}}</time></span>
         <div class="content">
-            {{ .Summary }}
+            {{ .Summary | markdownify}}
         </div>
         <div class="tags is-pulled-right skew">
             {{ range .Params.categories }}
