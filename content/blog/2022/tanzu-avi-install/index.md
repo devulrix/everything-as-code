@@ -222,6 +222,49 @@ Now everything is setup to finally install the Supervisor Cluster.
 
 ### Tanzu Storage Policy
 
+The storage for the Supervisor Control Plane the Tanzu Kubernetes Clusters and the Storage Classes within the Kubernetes Cluster can only be assigned if we have *Storage Policy* in place. If you already have one you can skip this section, just put the name in the spreadsheet.
+
+The easiest way to create a new policy is to create a tag based rule for one of your datastores. Click on the *Assign* button.
+
+![assign tag to datastore](sp-create.png)
+
+Click the *ADD TAG*
+
+![assign tag to datastore](sp-assign.png)
+
+Put in the name. We use *tanzu*. Then *Create New Category*:
+
+![assign tag to datastore](sp-name.png)
+
+Create a new category, with the Category Name: *k8s*.
+
+![assign tag to datastore](sp-category.png)
+
+Finally assign the tag to the datastore.
+
+![assign tag to datastore](sp-assigned.png)
+
+Next we need to create a policy based on the tag. Go to **Policies and Profiles > VMS Storage Policies**. Click on *Create*
+
+![create new storage policy](sp-new.png)
+
+Give the new policy a name, make sure to use a DNS compliant name. This makes it easier later when we need to reference the name in Kubernetes Deployment files. If you don't create a DNS compliant name, Tanzu will convert it to match the requieremnt. Which will result in diffrences between the UI and the YAML file.
+We use **tanzu-storage**, put your name into the spreadsheet for later reference.
+
+![create new tanzu storage policy](sp-tanzu-name.png)
+
+We created a tag on our datastore so we need to select *Enable tag based placement rules*. 
+
+![use tag based rules](sp-rules.png)
+
+The rule to select the storage for our policy is based on *Tag category: k8s* and for the *Tags* click *BROWSE TAGS* and selet *tanzu*. 
+
+![use tag based rules](sp-rules2.png)
+
+You should now see your datastore in the compatible list and click *next* and *finish*.
+
+![finish storage policy](sp-finish.png)
+
 ### Supervisor Control Plane
 
 Now we can start the installation of the Supervisor Control plane. In the vCenter go to **Workload Managment**. Click on the *Get Started* button.
