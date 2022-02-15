@@ -24,7 +24,7 @@ This is not an official VMware Guide. If you’re looking for that, please follo
 
 {{< /message >}}
 
-Below you find the corresponding YouTube video of me doing everything described in this article. We stored all files in a [GitHub repository](https://github.com/devulrix/tanzu-poc).
+Below you find the corresponding YouTube video of me doing everything described in this article. I stored all files in a [GitHub repository](https://github.com/devulrix/tanzu-poc). You can donwload the network sheet [here](network-sheet.xlsx).
 
 YouTube
 
@@ -35,26 +35,31 @@ If you’re looking for an easy automated installation, have a look at William L
 Before we can start, we need to make sure that we meet the minimum criteria for the environment.
 
 * 3 ESXi hosts with vSphere 7.0 and Enterprise Plus license
-
-* vCenter 7.0 U3
-
+* vCenter 7.0 U3 or newer
 * 3 routed Networks on a distributed switch
-
-* **Management Network** with 5 consecutive IP addresses and minimum 8 IPs in total
-
-* At least one **Workload Network** with the size of the K8s workers you want to support, we’ll be using a /24.
-
-* One **VIP/Frontend Network** with the size of the Load Balancer Service you want to use, at least 1 for each K8s cluster is needed. I’ll be using a /24 as well.
-
-* All networks need to have access to DNS & NTP.
-
+  * No firewalling between the 3 networks
+  * All networks need to have access to DNS & NTP
+  * **Management Network** with 5 consecutive IP addresses and minimum 8 IPs in total
+  * At least one **Workload Network** with the size of the K8s workers you want to support, we’ll be using a /24.
+  * One **VIP/Frontend Network** with the size of the Load Balancer Service you want to use, at least 1 for each K8s cluster is needed. I’ll be using a /24 as well.
 * vSphere HA & DRS needs to be enabled on the vSphere cluster
 
 For a full list of requirements have a look at the official [documentation](https://docs.vmware.com/en/VMware-vSphere/7.0/vmware-vsphere-with-tanzu/GUID-7FF30A74-DDDD-4231-AAAE-0A92828B93CD.html). We will cover the network setup in much more detail in the [vSphere Networking](#vsphere-with-tanzu---vsphere-networking) section.
 
 ## vSphere with Tanzu - vSphere Networking
 
-![Network Setup for NSX Advanced Loadbalancer and Tanzu](networking.svg)
+This section covers the networking needed to set up vSphere with Tanzu and NSX Advanced Load Balancer (NSX ALB). You can only use this setup if you are using vSphere Distributed Switch (VDS).
+
+The ALB provides your Kubernetes’ environment with a dynamic Load Balancer services for your Kubernetes Cluster API endpoints and for Load Balancer services within your cluster. The ALB comprises 3 components, Controller, Service Engine and AVI Kubernetes Operator (AKO).
+
+The controller is the central management component. It provides the web interface for management and interacts with the vCenter. It provisions the service engines and does the monitoring of the resources and logging.
+
+The service engines (SE) are VMs and provide virtual services, Layer 4 and Layer 7 load balancing. The SE is connected to at least two network interfaces, one for management to interact with the controller and the other to expose the virtual services.
+
+The AKO is an operator running in the Supervisor Cluster to monitor Kubernetes resources and communicates with the controller to request load balancing services.
+
+
+![Network Setup for NSX Advanced Loadbalancer and Tanzu](network.png)
 
 Assume no firewalling
 
@@ -65,13 +70,9 @@ Assume no firewalling
 To match our described network setup, we need to create 3 port groups on our distributed switch.
 
 | Port Group Name | CIDR | Gateway | VLAN |
-
 |----------------------|:---------------:|:------------:|------|
-
 | TanzuMgt-PG-16 | 192.168.16.0/24 | 192.168.16.1 | 16 |
-
 | Tanzu-Workload-PG-15 | 192.168.15.0/24 | 192.168.15.1 | 15 |
-
 | Tanzu-Frontend-PG-14 | 192.168.14.0/24 | 192.168.14.1 | 14 |
 
 ## NSX Advanced Loabalancer Instalation
