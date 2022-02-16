@@ -40,6 +40,7 @@ Before we can start, we need to make sure that we meet the minimum criteria for 
   * No firewalling between the 3 networks
   * All networks need to have access to DNS & NTP
   * **Management Network** with 5 consecutive IP addresses and minimum 8 IPs in total
+  * **Management Netowrk** needs to reach the vCenter
   * At least one **Workload Network** with the size of the K8s workers you want to support, we’ll be using a /24.
   * One **VIP/Frontend Network** with the size of the Load Balancer Service you want to use, at least 1 for each K8s cluster is needed. I’ll be using a /24 as well.
 * vSphere HA & DRS needs to be enabled on the vSphere cluster
@@ -58,12 +59,17 @@ The service engines (SE) are VMs and provide virtual services, Layer 4 and Layer
 
 The AKO is an operator running in the Supervisor Cluster to monitor Kubernetes resources and communicates with the controller to request load balancing services.
 
+### Network Topology & Requirements
+
+The network topology comprises 3 components: Management, Frontend and Workload network. You have to options on how you can set this up. Either a 2 network setup in which you run the frontend and workload network converged. Or you run a 3 network setup in which you separate frontend and workload network. This is recommended for a production setup and what we will use our PoC setup as well. In the picture below, you can see the details. For a detailed list with all resources and port requirements, have a look at the [documentation](https://docs.vmware.com/en/VMware-vSphere/7.0/vmware-vsphere-with-tanzu/GUID-7FF30A74-DDDD-4231-AAAE-0A92828B93CD.html).
 
 ![Network Setup for NSX Advanced Loadbalancer and Tanzu](network.png)
 
-Assume no firewalling
+The ALB controller, the Supervisor Cluster VMs and the Service Engines use the management network. This interface is used to connect to the ALB to the Service Engines. The 3 Supervisor VMs take 5 consecutive IPs on the management network, one for each VM, one for the VIP and the 5th during update for an additional Supervisor VM. When the first load balancing service is requested, the ALB will provision 2 Service Engines, each having one interface on the management network. 
 
-2 Setups converged Workload and Frontend or seperate
+The Kubernetes VMs use the Workload network to communicate and to expose their services to the ALB. The network is used by the Supervisor Cluster VMs to communicate with the Tanzu Kubernets clusters. You can have more than one Workload Network, but the Supervisor Cluster VMs will only have an interface to the first (default) workload network.  
+
+The frontend network is used by the Service Engines to provide load balancing services. The engines don’t have an interface to the workload network (one-arm setup). This requires us to set up a default route for the Frontend Network to reach the Kubernetes VMs in the workload network. The Supervisor Cluster VMs get VIP on the Frontend Network as well to expose the Kubernetes API to developers. 
 
 ### Create Port Groups on the Distributed Switch
 
