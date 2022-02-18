@@ -1,7 +1,7 @@
 ---
 title: "Getting started with Tanzu and NSX Advanced Load Balancer"
-date: 2022-02-01T09:57:34+01:00
-publishDate: 2022-02-06
+date: 2022-02-17T09:57:34+01:00
+publishDate: 2022-02-18
 author: Ulrich Hölscher
 authorLink: https://twitter.com/devulrix
 
@@ -26,7 +26,7 @@ This is not an official VMware Guide. If you’re looking for that, please follo
 
 Below you find the corresponding YouTube video of me doing everything described in this article. I stored all files in a [GitHub repository](https://github.com/devulrix/tanzu-poc). You can donwload the network sheet [here](network-sheet.xlsx).
 
-YouTube
+{{< youtube-video videoid 3Xzfg8mJ56E >}}
 
 If you’re looking for an easy automated installation, have a look at William Lam’s [repository](https://github.com/lamw/vsphere-with-tanzu-nsx-advanced-lb-automated-lab-deployment). William is building an automated nested environment to get you started in less than an hour.
 
@@ -385,4 +385,152 @@ The *API Server DNS Name* is optional, and will add the DNS name as SAN to the c
 
 ## Tanzu Kubernetes Cluster Deployment
 
-After the installation finished, the next step is to create our first Tanzu Kubernetes Cluster.
+Once the installation is finished, you see the green running status and get the Control Plane Node Adress from the ALB, in my case 192.168.14.11.
+
+![SC installation finished](sc-ready.png)
+
+You can see the Namespace construct shows up in the *Invetory*. We have 3 running Supervisor Control Plane VMs, as well as 2 ALB SEs.
+
+![SC installation finished](sc-explained.png)
+
+### Create a vSphere Namespace
+
+The next step is to create a namespace we can use to provision our first Tanzu Kubernetes cluster in. You need to go to **Workloadmanagement > Namespcaes** click on *Create Namespace* selcect your Tanzu cluster and give it a DNS compliant name. I choose *tkc-test*. Select our Workload Network for deploying the K8s VMs.
+
+![Create NS](ns-create.png)
+
+The next step is to assign the user who can access the namespace. For this click on *Add Permissions*. Select your authentication source. If your vCenter is connect to LDAP/AD choose this and select a user or group. I use my developer account *cody*. Give the user the *edit* role so they can create Tanzu Kubernetes Clusters.
+
+![Assign user to NS](ns-user.png)
+
+Now we assign our storage policy to the namespace. This is used for the Kubernetes VMs as well as source for persistanced volume claims within the cluster. You can select more then one. We're just using the one we created earlier. Click *ADD STORAGE* and select *tanzu-storage*.
+
+![Assign storage to NS](ns-storage.png)
+
+We now can limit the resources our developer use can utilize. For this click on *EDIT Limits* and choose what you need. In my demo I don't assign any limits as my lab is very small.
+
+![Assign capacity limit to NS](ns-limit.png)
+
+The next step is to assign VM classes to the namespace. This will limit the developer to a number of VM classes they can use to create the cluster. These class can be modified and you can add your own classes as well. Click on *ADD VM CLASS* and select the once you like. For the demo I choose *best-effort-small, best-effort-xsmall, best-effort-medium*.
+
+![Assign class to NS](ns-vm.png)
+
+Finally we need to assign the content library containing all the Tanzu kubernetes versions we can use. 
+
+![Assign content library to NS](ns-content.png)
+
+If you now click on *Open Link* it will take you to the landing page of the Supervisor Control Plane. Here you should download the kubectl + vSphere Plugin bundle for your OS.
+
+![Go to supervisor landing page](sc-landing.png)
+
+Download the zip file and extract it. Put the binaries into your user or system path.
+
+### Create a Simple Cluster
+
+Now finally is the time for us to create a Tanzu Kubernetes Cluster. But before we can execute the creation we need to login to our Supervisor Cluster. Addjust with the IP of your landing page from the previous section:
+
+```bash {linenos=false,linenostart=1}
+kubectl vsphere login --vsphere-username user@your-domain --server https://landing-page-ip --insecure-skip-tls-verify
+```
+
+This creates a new kubernetes context in your *.kube/config* and now you can switch into the new context. If you chose the same Namespace as I did, switch into the new context:
+
+```bash {linenos=false,linenostart=1}
+kubectl config use-context tkc-test
+```
+
+You can download the example files from the [GitHub repository](https://github.com/devulrix/tanzu-poc). Go to the new folder *tanzu-poc* and switch to the *00-cluster* folder. This contains our *simple-cluster.yaml* file:
+
+```yaml {linenos=table,hl_lines=[10,18,24],linenostart=1}
+ kind: TanzuKubernetesCluster
+ metadata:
+   name: simple-cluster
+   namespace: tkc-test
+ spec:
+   topology:
+     controlPlane:
+       replicas: 1
+       vmClass: best-effort-xsmall
+       storageClass: tanzu-storage
+       tkr:
+         reference:
+           name: v1.21.2---vmware.1-tkg.1.ee25d55
+     nodePools:
+     - name: workerpool-1
+       replicas: 1
+       vmClass: best-effort-xsmall
+       storageClass: tanzu-storage
+       tkr:
+         reference:
+           name: v1.21.2---vmware.1-tkg.1.ee25d55
+   settings:
+     storage:
+       defaultClass: tanzu-storage
+```
+
+If you chose a different storage policy name, please adjust at the highlighted lines. If followed along and choose the same VM classes, you can now create your first Tanzu Kubernetes cluster:
+
+```bash {linenos=false,linenostart=1}
+kubectl apply -f simple-cluster.yaml
+```
+
+This will create the new Tanzu Kubernetes Cluster, with a single control plane node and a single worker node. The ALB will create a VIP for the Kubernetes API endpoint. Once the installation is finished you can see the new cluster object in vCenter. If you chose to not automatically sync the content library, the first cluster will take a little longer as it needs to download the OVA once.
+
+![Tanzu Cluster created](sc-created.png)
+
+If you want to check the status of your Tanzu cluster, run the following command:
+
+```bash {linenos=false,linenostart=1}
+kubectl get tkc
+```
+
+The next step would now be to login to the new Tanzu cluster. For this we will use the same command as above to login to the Supervisor Cluster:
+
+```bash {linenos=false,linenostart=1}
+kubectl vsphere login --vsphere-username user@your-domain --server https://landing-page-ip --insecure-skip-tls-verify \
+--tanzu-kubernetes-cluster-name simple-cluster --tanzu-kubernetes-cluster-namespace tkc-test
+```
+
+This will update your *~/.kube/config* with the config of your Tanzu Cluster. Now we can switch into the cluster context:
+
+```bash {linenos=false,linenostart=1}
+kubectl config use-context simple-cluster
+```
+
+Your in the *ClusterAdmin* role within the Tanzu Cluster. If you want to see all pods running execute: 
+
+```bash {linenos=false,linenostart=1}
+kubectl get pods -A
+```
+
+### Start Test Application
+
+In this section we start our first application on our new cluster. In the *tanzu-poc* folder move one up to the *01-simple* folder. In that folder we have the *namespace-role.yaml* this will create a namespace, *tanzu-test-01* within your cluster. The app will run in that namespace. We create a service account to use for the Kubernetes deployment to match with the PSPs in the cluster. So to get startet run:
+
+```bash {linenos=false,linenostart=1}
+kubectl apply -f namespace-role.yaml
+```
+
+Now we finally can start our application. It's a simple webpage surfed via nginx. We will start 2 replicas and use the type *Loadbalancer* for the service to expose the webpage:
+
+```bash {linenos=false,linenostart=1}
+kubectl apply -f simple-app-lb.yaml
+```
+
+To see your running pods execute:
+
+```bash {linenos=false,linenostart=1}
+kubectl get pods -n tanzu-test-01
+```
+
+To find out the IP of our service: 
+
+```bash {linenos=false,linenostart=1}
+kubectl get svc -n tanzu-test-01
+```
+
+Take the *EXTERNAL-IP* and put it into your webbrowser and you will see the following landing page:
+
+![Application up and running](app-start.png)
+
+This is the end of our tutorial. In the next post I'll cover the installation of the extensions.
