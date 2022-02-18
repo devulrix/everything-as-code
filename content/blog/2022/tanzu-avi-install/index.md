@@ -26,7 +26,7 @@ This is not an official VMware Guide. If you’re looking for that, please follo
 
 Below you find the corresponding YouTube video of me doing everything described in this article. I stored all files in a [GitHub repository](https://github.com/devulrix/tanzu-poc). You can donwload the network sheet [here](network-sheet.xlsx).
 
-{{< youtube-video videoid 3Xzfg8mJ56E >}}
+{{< youtube-video videoid=3Xzfg8mJ56E >}}
 
 If you’re looking for an easy automated installation, have a look at William Lam’s [repository](https://github.com/lamw/vsphere-with-tanzu-nsx-advanced-lb-automated-lab-deployment). William is building an automated nested environment to get you started in less than an hour.
 
