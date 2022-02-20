@@ -34,6 +34,18 @@ enableEmoji = true
     [markup.goldmark]
         [markup.goldmark.renderer]
             unsafe = true
+    [markup.highlight]
+      anchorLineNos = false
+      codeFences = true
+      guessSyntax = false
+      hl_Lines = ''
+      lineAnchors = ''
+      lineNoStart = 1
+      lineNos = false
+      lineNumbersInTable = true
+      noClasses = false
+      style = 'monokailight'
+      tabWidth = 4
 
 # [permalinks]
 #     blog = "/blog/:filename/"

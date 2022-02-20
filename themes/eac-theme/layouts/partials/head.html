@@ -25,6 +25,9 @@
     {{ $css := resources.Get "css/style.css" }}
     {{ $secureCSS := $css | resources.Minify | fingerprint "sha512"}}
     <link rel="stylesheet" href="{{ $secureCSS.Permalink }}" integrity="{{ $secureCSS.Data.Integrity }}"/>
+    {{ $syntax_css := resources.Get "css/syntax.css" }}
+    {{ $secureSyntaxCSS := $syntax_css | resources.Minify | fingerprint "sha512"}}
+    <link rel="stylesheet" href="{{ $secureSyntaxCSS.Permalink }}" integrity="{{ $secureSyntaxCSS.Data.Integrity }}"/>
     {{ template "_internal/opengraph.html" . }}
     {{ template "_internal/twitter_cards.html" . }}
     {{ if not (in (string .Site.BaseURL) "localhost") }}
