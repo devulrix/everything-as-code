@@ -8,3 +8,6 @@ values.yml
 
 # ignore generated images
 resources/_gen/*
+
+# remove ideas 
+Ideas.md
