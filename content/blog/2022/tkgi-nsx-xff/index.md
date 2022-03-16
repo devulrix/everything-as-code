@@ -8,14 +8,15 @@ featuredImage: "default.jpg"
 featuredImageAlt: "Laptop with open code editor and syntax highlighting blurred to the right."
 toc: false
 
-categories: [tanzu]
+categories: [Tanzu]
 tags: [tanzu,k8s,tkgi,tanzu kubernetes grid integrated,VMware,nsx-t,x-forward,ingress]
 
 draft: false
 ---
-## Using the NSX-T Ingress
 
 A few days ago I came across the requierment to use the [X-Forward-For](https://en.wikipedia.org/wiki/X-Forwarded-For) HTTP header field to get the client IP. Looking at the [documentation](https://docs.pivotal.io/tkgi/1-13/network-profiles-ncp-lb.html) this looks quite easy. Just create a newtork profile and apply this profile during cluster creation.In the profile you need to the the ```x_forward_for```parameter to ```insert```instead of the default ```replace```. So I created the following profile:
+
+<!--more-->
 
 ```json {linenos=table,hl_lines=[9],linenostart=1}
 {
@@ -66,9 +67,38 @@ If you have a look at the Load Balancer Server Pool in the NSX-T manager you can
 
 ![NSX-T Server Pool SNAT Profile set to AutoMap](snat-auto-map.png)
 
-So there's currently no support by TKGI to set this flag to transparent. So I created the small scipt below to use the NSX-T Manager REST API to override this flag and make the SNAT Mode ```transparent```:
+So there's currently no support by TKGI to set this flag to transparent. So I created the small scipt below to use the NSX-T Manager REST API to override this flag and make the SNAT Mode ```transparent```. You can download the [GitHub Gist](https://gist.github.com/devulrix/84a2ce581662a464f788aa040cd63c41) as well:
 
-<script src="https://gist.github.com/devulrix/84a2ce581662a464f788aa040cd63c41.js"></script>
+```bash {linenos=table, linenostart=1}
+ #!/usr/bin/env bash
+ #
+
+ usage() {
+     echo "Usage: $0 [ -n CONTROLLER URL ] [-u ADMIN ] [-p PASSWORD ] [-s SERVER_POOL ]"
+ }
+
+ exit_abnormal() {
+     usage
+     exit 1
+ }
+
+ while getopts n:u:p:s: flag
+ do
+     case "${flag}" in
+         n) NSXT_URL=${OPTARG};;
+         u) NSXT_ADMIN=${OPTARG};;
+         p) NSXT_PASSWORD=${OPTARG};;
+         s) NSXT_SERVERPOOL=${OPTARG};;
+         *) exit_abnormal;;
+     esac
+ done
+
+ PAYLOAD=$(curl -k -s -u ${NSXT_ADMIN}:${NSXT_PASSWORD} -X GET "${NSXT_URL}/api/v1/loadbalancer/pools/${NSXT_SERVERPOOL}" | jq -r 'del(.snat_translation)')
+
+ curl -k -s -u ${NSXT_ADMIN}:${NSXT_PASSWORD} -H "Content-Type: application/json" -X PUT "${NSXT_URL}/api/v1/loadbalancer/pools/${NSXT_SERVERPOOL}" -d "${PAYLOAD}" -H "X-Allow-Overwrite: true"
+
+ exit 0
+```
 
 You need to specifiy the admin user, password, NSX-T Manager URL as well as the Server Pool ID you want to change.
 
