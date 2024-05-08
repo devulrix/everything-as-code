@@ -23,3 +23,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
   });
+
+  $(document).ready(function () {
+    var $menu = $('#TableOfContents');
+    var $toggleButton = $('#toggle-menu');
+    var offsetTop = $menu.offset().top;
+    // Toggle menu visibility on mobile
+    $toggleButton.on('click', function() {
+      $menu.toggle(); // Simple show/hide toggle
+    });
+  
+    // Function to handle scrolling and positioning
+    function handleScroll() {
+      var scrollTop = $(window).scrollTop();
+      var windowWidth = $(window).width();
+  
+      if (windowWidth >= 1024) {
+        if (scrollTop >= offsetTop) {
+          $menu.css({
+            position: 'fixed',
+            top: '100',
+            right: '',
+            zIndex: '1000',
+            width: $menu.parent().width() // Maintain the width
+          });
+        } else {
+          $menu.css({
+            position: 'static',
+            top: '100',
+            right: '',
+            width: ''
+          });
+        }
+      } else {
+        // Ensure the menu is not fixed on small screens
+        $menu.css({
+          position: 'static',
+          width: '' // Reset width to auto for smaller screens
+        });
+      }
+    }
+  
+    // Attach scroll and resize events
+    $(window).on('scroll', handleScroll);
+    $(window).on('resize', handleScroll);
+  
+    // Initial call in case the page loads at a position other than top
+    handleScroll();
+  });
+  
+  
+  

@@ -8,8 +8,8 @@
 </div>
 <section class="section">
     <article>
-        <div class="columns is-centered">
-            <div class="column max-800px">
+        <div class="columns is-centered ">
+            <div class="column is-half is-centered">
                 <div class="title subtitle heading is-6">
                     <div class="columns is-vcentered">
                         <div class="column">
@@ -40,9 +40,13 @@
                     {{ partial "widgets/image.html" (dict "image" $localImage "large" "776" "small" "422" "alt" .Params.featuredImageAlt) . }}
                 </figure>
                 <div class="content">
+                    <button class="button is-hidden-desktop" id="toggle-menu">Toggle Menu</button>
                     {{ .Content }}
                 </div>
             </div>
+            {{ if and (gt .WordCount 400 ) (.Params.toc) }}
+            <div class="column is-3">{{ partial "widgets/toc.html" . }}</div>
+            {{ end }}
         </div>
     </article>
 </section>
