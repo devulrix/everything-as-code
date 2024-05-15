@@ -26,7 +26,7 @@ enableEmoji = true
     # feature image for OpenGraph and Twitter
     images = ["logo-wide.svg"]
     author = "Ulrich Hölscher"
-    authorDescription = "Senior Platform Architect"
+    authorDescription = "Advisory Platform Architect"
     authorImage = "/images/ulrich-small.webp"
     authorURL = "https://twitter.com/devulrix"
 
