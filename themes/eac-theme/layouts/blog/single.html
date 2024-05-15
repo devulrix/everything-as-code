@@ -28,10 +28,16 @@
                             </div>
                         </div>
                         <div class="column">
+                            <p>Categories:
                             {{ range $idx, $category := .Params.categories }}
                             {{- if ne $idx 0 }}, {{ end }}<a
                                 href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
-                            {{- end }}
+                            {{- end }}</p>
+                            <p>Tags:
+                            {{ range $idx, $tag := .Params.tags }}
+                            {{- if ne $idx 0 }}, {{ end }}<a
+                                href="{{ "tags/" | relURL }}{{ $tag | urlize }}">{{ $tag }}</a>
+                            {{- end }}</p>
                         </div>
                     </div>
                 </div>
