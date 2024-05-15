@@ -67,10 +67,6 @@ main {
     position: absolute;
 }
 
-.column {
-    display: flex;
-}
-
 .columns.is-multiline {
     display: flex;
     flex-wrap: wrap;

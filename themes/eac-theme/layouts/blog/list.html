@@ -11,10 +11,10 @@
         <div class="content">
             {{ .Content }}
         </div>
-        <div class="row columns is-multiline">
+        <div class="row columns is-multiline" style="display: flex;">
             {{ range .Paginator.Pages }}
-            <div class="column is-half">
-                <div class="column is-full">
+            <div class="column is-half" style="display: flex;">
+                <div class="column is-full" style="display: flex;">
                     {{ partial "widgets/post-card.html" . }}
                 </div>
             </div>
