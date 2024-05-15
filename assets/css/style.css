@@ -13,12 +13,6 @@ main {
     font-size: 1.5em;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
 /* Hide the toggle button on desktop */
 @media screen and (min-width: 1024px) {
     #toggle-menu {
@@ -73,24 +67,23 @@ body {
     position: absolute;
 }
 
-/* .card {
-    height: 100%;
+.column {
+    display: flex;
 }
 
-.card-content {
-    flex-grow:1;
-  }
-
+.columns.is-multiline {
+    display: flex;
+    flex-wrap: wrap;
+}
 .card {
-    height: 100%;
     display: flex;
     flex-direction: column;
-  }
-
-.card-footer {
-  margin-top: auto
+    justify-content: space-between;
+    width: 100%;
 }
-
 .card-content {
-      height: 100%;
-  }  */
+    flex-grow: 1;
+}
+.card-footer {
+    justify-content: center;
+}
