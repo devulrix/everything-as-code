@@ -17,8 +17,12 @@
         </figure>
     </div>
     <div class="card-content">
-        <a class="title is-4" href="{{ .Permalink }}">{{ .Title }}</a>
-        <span class="heading"><a href="{{ .Params.authorLink }}">{{ .Params.author }}</a> | <time>{{ .PublishDate.Format "January 2, 2006"}}</time></span>
+        <div class="media">
+            <div class="media-content">
+                <p class="title is-4"><a class="has-text-primary-dark" href="{{ .Permalink }}">{{ .Title }}</a></p>
+                <p class="subtitle is-6"><a class="has-text-primary-dark" href="{{ .Params.authorLink }}">{{ .Params.author }}</a> | <time>{{ .PublishDate.Format "January 2, 2006"}}</time></p>
+            </div>
+        </div>
         <div class="content">
             {{ .Summary | markdownify}}
         </div>
