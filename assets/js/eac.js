@@ -24,53 +24,40 @@ document.addEventListener('DOMContentLoaded', () => {
   
   });
 
-  $(document).ready(function () {
-    var $menu = $('#TableOfContents');
-    var $toggleButton = $('#toggle-menu');
-    var offsetTop = $menu.offset().top;
-    // Toggle menu visibility on mobile
-    $toggleButton.on('click', function() {
-      $menu.toggle(); // Simple show/hide toggle
-    });
-  
-    // Function to handle scrolling and positioning
-    function handleScroll() {
-      var scrollTop = $(window).scrollTop();
-      var windowWidth = $(window).width();
-  
-      if (windowWidth >= 1024) {
-        if (scrollTop >= offsetTop) {
-          $menu.css({
-            position: 'fixed',
-            top: '100',
-            right: '',
-            zIndex: '1000',
-            width: $menu.parent().width() // Maintain the width
-          });
-        } else {
-          $menu.css({
-            position: 'static',
-            top: '100',
-            right: '',
-            width: ''
-          });
-        }
-      } else {
-        // Ensure the menu is not fixed on small screens
-        $menu.css({
-          position: 'static',
-          width: '' // Reset width to auto for smaller screens
+  $(document).ready(function() {
+    var lastId,
+        topMenu = $("#TableOfContents"),
+        topMenuHeight = topMenu.outerHeight() + 15,
+        menuItems = topMenu.find("a"),
+        scrollItems = menuItems.map(function(){
+          var item = $($(this).attr("href"));
+          if (item.length) { return item; }
         });
-      }
-    }
-  
-    // Attach scroll and resize events
-    $(window).on('scroll', handleScroll);
-    $(window).on('resize', handleScroll);
-  
-    // Initial call in case the page loads at a position other than top
-    handleScroll();
-  });
-  
-  
+
+    menuItems.click(function(e){
+      var href = $(this).attr("href"),
+          offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
+      $('html, body').stop().animate({ 
+          scrollTop: offsetTop
+      }, 300);
+      e.preventDefault();
+    });
+
+    $(window).scroll(function(){
+       var fromTop = $(this).scrollTop() + topMenuHeight;
+       var cur = scrollItems.map(function(){
+         if ($(this).offset().top < fromTop)
+           return this;
+       });
+       cur = cur[cur.length-1];
+       var id = cur && cur.length ? cur[0].id : "";
+       
+       if (lastId !== id) {
+           lastId = id;
+           menuItems
+             .removeClass("is-active")
+             .filter("[href='#"+id+"']").addClass("is-active");
+       }                   
+    });
+});
   

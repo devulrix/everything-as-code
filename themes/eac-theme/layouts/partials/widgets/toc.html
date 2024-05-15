@@ -1,6 +1,6 @@
 {{ $toc := .TableOfContents }}
 {{ if $toc }}
-<aside class="menu">
+<aside class="menu" id="TableOfContents">
   <!-- Use | safeHTML to render as HTML -->
   {{ $toc |  replaceRE "<ul>" "<ul class='menu-list'>" | safeHTML }}
 </aside>
