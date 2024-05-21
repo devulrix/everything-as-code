@@ -6,8 +6,8 @@
         <h2 class="title has-text-centered">Blog</h2>
         <div class="columns is-multiline">
             {{ range first $count $pages }}
-            <div class="column is-one-third" style="display: flex;">
-                <div class="column is-full" style="display: flex;">
+            <div class="column is-one-third" id="BlogListHlaf">
+                <div class="column is-full" id="BlogListFull">
                     {{ partial "widgets/post-card.html" . }}
                 </div>
             </div>

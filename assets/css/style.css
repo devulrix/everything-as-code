@@ -83,3 +83,15 @@ main {
 .card-footer {
     justify-content: center;
 }
+
+#BlogListMultiLine {
+    display: flex;
+}
+
+#BlogListHlaf {
+    display: flex;
+}
+
+#BlogListFull {
+    display: flex;
+}
