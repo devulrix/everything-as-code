@@ -1,0 +1,27 @@
+{{ $url := "https://www.youtube.com/watch?v=" }}
+{{ $videoUrl := .Get "id" -}}
+{{ $thumbnailUrl := printf "https://img.youtube.com/vi/%s/maxresdefault.jpg" $videoUrl -}}
+
+{{ $overlay := "" }}
+{{ $path := "images/youtube-overlay.png"}}
+{{ with resources.Get $path }}
+  {{ $overlay = . }}
+{{ else }}
+  {{ errorf "Unable to get resource %q" $path }}
+{{ end }}
+
+{{ $filter := images.Overlay $overlay 0 0}}
+
+{{ with resources.GetRemote $thumbnailUrl -}}
+  {{ with .Err }}
+    {{ errorf "youtube-thumbnail.html: %s" . }}
+  {{ else }}
+    <a href="{{ $url }}{{ $videoUrl }}" target="_blank" rel="noopener noreferrer">
+    {{ with . | images.Filter $filter}}
+      <img src="{{ .RelPermalink }}" alt="YouTube Video">
+    </a>
+    {{ end }}
+  {{ end }}
+{{ else }}
+  {{ errorf "youtube-thumbnail.html: failed to fetch %s" $thumbnailUrl }}
+{{- end -}}
