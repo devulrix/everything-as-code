@@ -16,7 +16,10 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" integrity="sha384-QjOWlMHXqmQPt5FI7WVI2jAt6qXrPsRUbeyiJGuoePVW/vShC7H6R6vGAJUJlI/I" crossorigin="anonymous">
     <meta name="theme-color" content="#ffffff">
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+    {{ $jquery := resources.Get "js/jquery-3.7.1.js" }}
+    {{ $jqueryMini := $jquery | resources.Minify }}
+    {{ $jquerySecureJS := $jqueryMini | resources.Fingerprint "sha512" }}
+    <script type="text/javascript" defer src="{{ $jquerySecureJS.Permalink }}" integrity="{{ $jquerySecureJS.Data.Integrity }}"></script>
     {{ $cssFontAwesome := resources.Get "css/fontawesome.min.css" }}
     {{ $secureCSSSFontAwsome := $cssFontAwesome | fingerprint "sha512"}}
     <link rel="stylesheet" href="{{ $secureCSSSFontAwsome.Permalink }}" integrity="{{ $secureCSSSFontAwsome.Data.Integrity }}"/>
