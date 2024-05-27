@@ -14,7 +14,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <meta name="msapplication-TileColor" content="#2d89ef">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" integrity="sha384-QjOWlMHXqmQPt5FI7WVI2jAt6qXrPsRUbeyiJGuoePVW/vShC7H6R6vGAJUJlI/I" crossorigin="anonymous">
+    {{ $cssBulma := resources.Get "css/bulma.css" }}
+    {{ $secureCSSBulma := $cssBulma | resources.Minify | fingerprint "sha512"}}
+    <link rel="stylesheet" href="{{ $secureCSSBulma.Permalink }}" integrity="{{ $secureCSSBulma.Data.Integrity }}"/>
     <meta name="theme-color" content="#ffffff">
     {{ $jquery := resources.Get "js/jquery-3.7.1.js" }}
     {{ $jqueryMini := $jquery | resources.Minify }}
