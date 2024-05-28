@@ -71,12 +71,14 @@ document.addEventListener('DOMContentLoaded', function () {
   function setTheme(isDark) {
     if (isDark) {
       document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
       toggleButton.classList.remove('is-white');
       toggleButton.classList.add('is-black');
       themeIcon.classList.remove('fa-sun');
       themeIcon.classList.add('fa-moon');
     } else {
       document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem('theme', 'light');
       toggleButton.classList.remove('is-black');
       toggleButton.classList.add('is-white');
       themeIcon.classList.remove('fa-moon');
@@ -84,15 +86,22 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // Check for saved user preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    setTheme(savedTheme === 'dark');
+  } else {
+    // Set the initial theme based on the user's preference
+    setTheme(prefersDarkScheme.matches);
+  }
+
+  // Listen for changes in the user's preference and update the theme accordingly
   toggleButton.addEventListener('click', function () {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     setTheme(!isDark);
   });
 
-  // Set the initial theme based on the user's preference
-  setTheme(prefersDarkScheme.matches);
-
-  // Listen for changes in the user's preference and update the theme accordingly
+  // Listen for changes in the user's system preference and update the theme accordingly
   prefersDarkScheme.addEventListener('change', event => {
     setTheme(event.matches);
   });
