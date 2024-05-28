@@ -12,11 +12,15 @@ main {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 1.5em;
 }
+
 #TableOfContents {
-    position: -webkit-sticky; /* for Safari */
+    position: -webkit-sticky;
+    /* for Safari */
     position: sticky;
-    top: 20px; /* Adjust this value as needed */
-    max-height: calc(100vh - 40px); /* Adjust this value as needed */
+    top: 20px;
+    /* Adjust this value as needed */
+    max-height: calc(100vh - 40px);
+    /* Adjust this value as needed */
     overflow-y: auto;
 }
 
@@ -33,7 +37,7 @@ main {
 }
 
 .eac-logo {
-    max-height: 2.5rem; 
+    max-height: 2.5rem;
     min-height: 2rem;
 }
 
@@ -71,15 +75,18 @@ main {
     display: flex;
     flex-wrap: wrap;
 }
+
 .card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
 }
+
 .card-content {
     flex-grow: 1;
 }
+
 .card-footer {
     justify-content: center;
 }
@@ -95,3 +102,4 @@ main {
 #BlogListFull {
     display: flex;
 }
+

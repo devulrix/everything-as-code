@@ -60,4 +60,40 @@ document.addEventListener('DOMContentLoaded', () => {
        }                   
     });
 });
-  
+
+
+// Dark Mode
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleButton = document.getElementById('dark-mode-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+  function setTheme(isDark) {
+    if (isDark) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      toggleButton.classList.remove('is-white');
+      toggleButton.classList.add('is-black');
+      themeIcon.classList.remove('fa-sun');
+      themeIcon.classList.add('fa-moon');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      toggleButton.classList.remove('is-black');
+      toggleButton.classList.add('is-white');
+      themeIcon.classList.remove('fa-moon');
+      themeIcon.classList.add('fa-sun');
+    }
+  }
+
+  toggleButton.addEventListener('click', function () {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    setTheme(!isDark);
+  });
+
+  // Set the initial theme based on the user's preference
+  setTheme(prefersDarkScheme.matches);
+
+  // Listen for changes in the user's preference and update the theme accordingly
+  prefersDarkScheme.addEventListener('change', event => {
+    setTheme(event.matches);
+  });
+});
