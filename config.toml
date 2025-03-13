@@ -98,6 +98,16 @@ enableEmoji = true
     url = "https://twitter.com/devulrix"
     pre = "<i class='fa-brands fa-x-twitter'></i>"
 
+[[menu.social]]
+    name = "Threads"
+    url = "https://www.threads.net/@devulrix"
+    pre = "<i class='fa-brands fa-threads'></i>"
+
+[[menu.social]]
+    name = "BlueSky"
+    url = "https://bsky.app/profile/everything-as-code.com"
+    pre = "<i class='fa-brands fa-bluesky'></i>"
+
 [[menu.footer]]
   name = "About"
   url = "/about"
