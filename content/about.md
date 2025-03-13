@@ -13,7 +13,7 @@ My name is Ulrich and this is my blog. In this blog, I try to share the informat
 
 ## Who are you?
 
-I'm currently an Advisory Platform Architect with [VMware by Broadcom](https://vmware.com) in the [Tanzu](https://tanzu.vmware.com) business Unit. Previously I held different roles at EMC, Dell and Pivotal. I have a diploma in Computer Science from the [RWTH Aachen University](https://rwth-aachen.de). I'm interested in exploring new technology and trying to apply theme for my customer engagements.
+I'm currently an Senior Solution Architect at [Red Hat](https://redhat.com). Previously I held different roles at EMC, Dell, Pivotal and VMware. I have a diploma in Computer Science from the [RWTH Aachen University](https://rwth-aachen.de). I'm interested in exploring new technology and trying to apply theme for my customer engagements.
 
 ## How often do you create new content?
 
@@ -34,4 +34,4 @@ I've been using [Hugo](https://gohugo.io) from the start in 2016. Originally I j
 
 ## How do I contact you?
 
-The easiest way to contact me is to reach out on [Twitter](https://twitter.com/DevUlrix). My DM's are open, so feel free to say 'Hello'. You can also use the [contact](/contact) page at the bottom of every page.
+The easiest way to contact me is to reach out on [BlueSky](https://bsky.app/profile/everything-as-code.com) or [Threads](https://www.threads.net/@devulrix). My DM's are open, so feel free to say 'Hello'.
