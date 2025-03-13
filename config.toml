@@ -2,7 +2,7 @@ baseURL = "https://everything-as-code.com"
 languageCode = "en-us"
 title = "Everyting as Code"
 theme = "eac-theme"
-paginate = 6
+pagination.pagerSize = 6
 
 enableGitInfo = true
 enableEmoji = true
@@ -14,7 +14,7 @@ enableEmoji = true
     disable = true
   [privacy.instagram]
     disable = true
-  [privacy.twitter]
+  [privacy.x]
     disable = true
   [privacy.vimeo]
     disable = true
