@@ -13,15 +13,11 @@
 {{ $filter := images.Overlay $overlay 0 0}}
 
 {{ with resources.GetRemote $thumbnailUrl -}}
-  {{ with .Err }}
-    {{ errorf "youtube-thumbnail.html: %s" . }}
-  {{ else }}
-    <a href="{{ $url }}{{ $videoUrl }}" target="_blank" rel="noopener noreferrer">
-    {{ with . | images.Filter $filter}}
-      <img src="{{ .RelPermalink }}" alt="YouTube Video">
-    </a>
-    {{ end }}
+  <a href="{{ $url }}{{ $videoUrl }}" target="_blank" rel="noopener noreferrer">
+  {{ with . | images.Filter $filter}}
+    <img src="{{ .RelPermalink }}" alt="YouTube Video">
   {{ end }}
+  </a>
 {{ else }}
   {{ errorf "youtube-thumbnail.html: failed to fetch %s" $thumbnailUrl }}
 {{- end -}}
